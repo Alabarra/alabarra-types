@@ -1,0 +1,18 @@
+{
+  "name": "alabarra-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./out/index.js",
+  "types": "./out/index.d.ts",
+  "dependencies": {
+    "firebase": "^9.8.2",
+    "tslib": "^2.4.0"
+  },
+  "scripts": {
+    "test": "tsc && node ./out/tests/index.js",
+    "build": "tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
