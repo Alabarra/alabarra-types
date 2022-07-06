@@ -3,10 +3,11 @@ export enum AlabarraResponseStatus {
     SUCCESS = 'SUCCESS',
     ERROR = 'ERROR'
 }
+
 /**
  * Represents the result of a call to the Create Order API
  */
-type AlabarraResponse = AlabarraResponseSuccess | AlabarraResponseError;
+export type AlabarraResponse = AlabarraResponseSuccess | AlabarraResponseError;
 
 /**
  * Represents the result of a call to the Create Order API
@@ -16,7 +17,7 @@ type AlabarraResponse = AlabarraResponseSuccess | AlabarraResponseError;
     /**
      * Whether the request succedded or failed
      */
-    status: AlabarraResponseStatus;
+    status: AlabarraResponseStatus.SUCCESS;
 
     /**
      * Result in case of success
@@ -32,7 +33,7 @@ type AlabarraResponse = AlabarraResponseSuccess | AlabarraResponseError;
     /**
      * Whether the request succedded or failed
      */
-    status: AlabarraResponseStatus;
+    status: AlabarraResponseStatus.ERROR;
 
     /**
      * Error message in case of error
