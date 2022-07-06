@@ -1,4 +1,4 @@
-import { AlabarraResponse } from "./AlabarraResponse";
+import { AlabarraResponseSuccess } from "./AlabarraResponse";
 
 /**
  * API to create a new table
@@ -14,7 +14,7 @@ import { AlabarraResponse } from "./AlabarraResponse";
 /**
  * Represents the result of a call to the Create Order API
  */
-export interface AlabarraCreateTableResponse extends AlabarraResponse {
+export interface AlabarraCreateTableResponse extends AlabarraResponseSuccess {
 
     result: {
         /**
