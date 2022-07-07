@@ -4,9 +4,14 @@
  export interface AlabarraTable {
 
     /**
-     * id of the table, which is in turn its name
-     */
+    * id of the table, which is in turn its name
+    */
     id?: string;
+    
+    /**
+     * user-facing name of the table. Same as id.
+     */
+    table_name: string;
 
     /**
      * Date of product creation in the server
