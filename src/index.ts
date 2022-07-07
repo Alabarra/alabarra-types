@@ -5,6 +5,7 @@
 */
 
 export * from "./types/AlabarraOrder";
+export * from "./types/AlabarraCategory";
 export * from "./types/AlabarraProduct";
 export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
