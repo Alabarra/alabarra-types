@@ -31,6 +31,7 @@ export * from "./cloud-functions/AlabarraFulfillOrder";
 */
 export * from "./converters/AlabarraProductConverter"
 export * from "./converters/AlabarraOrderConverter"
+export * from "./converters/AlabarraTableConverter"
 
 /* 
     --------------------------
