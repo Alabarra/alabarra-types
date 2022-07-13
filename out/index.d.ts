@@ -1,4 +1,5 @@
 export * from "./types/AlabarraOrder";
+export * from "./types/AlabarraCategory";
 export * from "./types/AlabarraProduct";
 export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
@@ -6,10 +7,14 @@ export * from "./types/AlabarraTable";
 export * from "./cloud-functions/AlabarraResponse";
 export * from "./cloud-functions/AlabarraCreateOrder";
 export * from "./cloud-functions/AlabarraCreateTable";
+export * from "./cloud-functions/AlabarraCreateCategory";
+export * from "./cloud-functions/AlabarraCreateProduct";
+export * from "./cloud-functions/AlabarraEditProduct";
 export * from "./cloud-functions/AlabarraStartProcessingOrder";
 export * from "./cloud-functions/AlabarraConfirmPresentialPayment";
 export * from "./cloud-functions/AlabarraSetOrderReadyForDelivery";
 export * from "./cloud-functions/AlabarraFulfillOrder";
 export * from "./converters/AlabarraProductConverter";
 export * from "./converters/AlabarraOrderConverter";
+export * from "./converters/AlabarraTableConverter";
 //# sourceMappingURL=index.d.ts.map

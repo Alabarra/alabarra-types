@@ -20,6 +20,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./types/AlabarraOrder"), exports);
+__exportStar(require("./types/AlabarraCategory"), exports);
 __exportStar(require("./types/AlabarraProduct"), exports);
 __exportStar(require("./types/AlabarraCustomer"), exports);
 __exportStar(require("./types/AlabarraManualPayment"), exports);
@@ -32,6 +33,9 @@ __exportStar(require("./types/AlabarraTable"), exports);
 __exportStar(require("./cloud-functions/AlabarraResponse"), exports);
 __exportStar(require("./cloud-functions/AlabarraCreateOrder"), exports);
 __exportStar(require("./cloud-functions/AlabarraCreateTable"), exports);
+__exportStar(require("./cloud-functions/AlabarraCreateCategory"), exports);
+__exportStar(require("./cloud-functions/AlabarraCreateProduct"), exports);
+__exportStar(require("./cloud-functions/AlabarraEditProduct"), exports);
 __exportStar(require("./cloud-functions/AlabarraStartProcessingOrder"), exports);
 __exportStar(require("./cloud-functions/AlabarraConfirmPresentialPayment"), exports);
 __exportStar(require("./cloud-functions/AlabarraSetOrderReadyForDelivery"), exports);
@@ -43,6 +47,7 @@ __exportStar(require("./cloud-functions/AlabarraFulfillOrder"), exports);
 */
 __exportStar(require("./converters/AlabarraProductConverter"), exports);
 __exportStar(require("./converters/AlabarraOrderConverter"), exports);
+__exportStar(require("./converters/AlabarraTableConverter"), exports);
 /*
     --------------------------
     COLLECTIONS

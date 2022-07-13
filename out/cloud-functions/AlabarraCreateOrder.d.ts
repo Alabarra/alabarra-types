@@ -1,4 +1,4 @@
-import { AlabarraResponse } from './AlabarraResponse';
+import { AlabarraResponseSuccess } from './AlabarraResponse';
 /**
  * Represents a cart line
  */
@@ -40,7 +40,7 @@ export interface AlabarraCreateOrderData {
 /**
  * Represents the result of a call to the Create Order API
  */
-export interface AlabarraCreateOrderResponse extends AlabarraResponse {
+export interface AlabarraCreateOrderResponse extends AlabarraResponseSuccess {
     result: {
         /**
          * The ID of the created order
