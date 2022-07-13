@@ -20,6 +20,7 @@ export * from "./cloud-functions/AlabarraResponse";
 export * from "./cloud-functions/AlabarraCreateOrder";
 export * from "./cloud-functions/AlabarraCreateTable";
 export * from "./cloud-functions/AlabarraCreateCategory";
+export * from "./cloud-functions/AlabarraCreateProduct";
 export * from "./cloud-functions/AlabarraStartProcessingOrder";
 export * from "./cloud-functions/AlabarraConfirmPresentialPayment";
 export * from "./cloud-functions/AlabarraSetOrderReadyForDelivery";
