@@ -1,5 +1,0 @@
-# Do not publish source code
-src/
-
-# Do publish out
-!out/
