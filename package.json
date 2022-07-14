@@ -1,9 +1,10 @@
 {
-  "name": "alabarra-types",
-  "version": "1.0.14",
+  "name": "@dvalenzuela-com/alabarra-types",
+  "version": "1.0.15",
   "description": "",
   "main": "./out/index.js",
   "types": "./out/index.d.ts",
+  "repository": "git://github.com/dvalenzuela-com/alabarra-types.git",
   "dependencies": {
     "firebase": "^9.8.2",
     "tslib": "^2.4.0"
