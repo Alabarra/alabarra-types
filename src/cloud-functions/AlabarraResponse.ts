@@ -7,12 +7,7 @@ export enum AlabarraResponseStatus {
 /**
  * Represents the result of a call to the Create Order API
  */
-export type AlabarraResponse = AlabarraResponseSuccess | AlabarraResponseError;
-
-/**
- * Represents the result of a call to the Create Order API
- */
- export interface AlabarraResponseSuccess {
+ export interface AlabarraResponseSuccessAbstract {
 
     /**
      * Whether the request succedded or failed

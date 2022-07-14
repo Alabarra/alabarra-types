@@ -1,6 +1,6 @@
 import { DocumentReference, FieldValue } from "firebase/firestore";
 import { AlabarraProductOption, AlabarraProductStatus } from "../types/AlabarraProduct";
-import { AlabarraResponseSuccess } from "./AlabarraResponse";
+import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./AlabarraResponse";
 
 /**
  * API to create a new table
@@ -53,7 +53,9 @@ import { AlabarraResponseSuccess } from "./AlabarraResponse";
 /**
  * Represents the result of a call to the Create Order API
  */
-export interface AlabarraCreateProductResponse extends AlabarraResponseSuccess {
+export type AlabarraCreateProductResponse = AlabarraCreateProductResponseSuccess | AlabarraResponseError;
+
+export interface AlabarraCreateProductResponseSuccess extends AlabarraResponseSuccessAbstract {
 
     result: {
         /**
