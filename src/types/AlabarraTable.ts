@@ -1,3 +1,5 @@
+import { DocumentReference } from "firebase/firestore";
+
 /**
  * Represents a product that can be ordered
  */
@@ -7,6 +9,16 @@
     * id of the table, which is in turn its name
     */
     id?: string;
+
+    /**
+     * Path of the category
+     */
+    path?: string;
+
+    /**
+     * Path of the category
+     */
+    ref?: DocumentReference;
     
     /**
      * user-facing name of the table. Same as id.
