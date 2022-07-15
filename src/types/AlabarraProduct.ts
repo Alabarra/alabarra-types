@@ -1,3 +1,5 @@
+import { DocumentReference } from "firebase/firestore";
+
 /**
  * Status of each product
  */
@@ -105,7 +107,17 @@ export interface AlabarraProduct {
     /**
      * id of the product
      */
-    id?: string;
+     id?: string;
+
+    /**
+     * path of the product
+     */
+    path?: string;
+
+    /**
+     * id of the product
+     */
+     ref?: DocumentReference;
 
     /**
      * Current status of the product

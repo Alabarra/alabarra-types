@@ -17,7 +17,9 @@ export const ProductConverter: FirestoreDataConverter<AlabarraProduct> = {
 	},
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): AlabarraProduct {
 		const data = snapshot.data(options);
-		data.id = snapshot.id
+		data.id = snapshot.id;
+		data.ref = snapshot.ref;
+		data.path = snapshot.ref.path;
 		return data as AlabarraProduct;
 	},
 };
