@@ -1,3 +1,4 @@
+import { DocumentReference } from "firebase/firestore";
 
 /**
  * Represents a manual payment
@@ -5,9 +6,19 @@
  export interface AlabarraManualPayment {
 
     /**
-     * id of the manual payment
+     * id of the category
      */
-    id?: string;
+     id?: string;
+
+     /**
+      * Path of the category
+      */
+     path?: string;
+ 
+     /**
+      * Path of the category
+      */
+     ref?: DocumentReference;
 
     /**
      * Ref to the order that was confirmed

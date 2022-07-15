@@ -1,3 +1,4 @@
+import { DocumentReference } from "firebase/firestore";
 
 /**
  * Represents a customer with an account
@@ -5,9 +6,19 @@
  export interface AlabarraCustomer {
 
     /**
-     * id of the customer
+     * id of the category
      */
-    id?: string;
+     id?: string;
+
+     /**
+      * Path of the category
+      */
+     path?: string;
+ 
+     /**
+      * Path of the category
+      */
+     ref?: DocumentReference;
 
     /**
      * First name of the customer
