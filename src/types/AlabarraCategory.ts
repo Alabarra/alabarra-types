@@ -11,9 +11,14 @@ import { DocumentReference } from "firebase/firestore";
     id?: string;
 
     /**
-     * id of the category
+     * Path of the category
      */
-    ref?: DocumentReference;
+    path?: string;
+
+    /**
+     * Path of the category
+     */
+     ref?: DocumentReference;
 
     /**
      * Title or name of the category
