@@ -19,6 +19,7 @@ export const CategoryConverter: FirestoreDataConverter<AlabarraCategory> = {
 		const data = snapshot.data(options);
 		data.id = snapshot.id;
         data.ref = snapshot.ref;
+		data.path = snapshot.ref.path;
 		return data as AlabarraCategory;
 	},
 };
