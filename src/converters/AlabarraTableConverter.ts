@@ -8,16 +8,16 @@ export const TableConverter: FirestoreDataConverter<AlabarraTable> = {
 		let newTable = table;
 		
 		if (newTable.created_at != undefined) {
-			newTable.created_at = newTable.created_at
+			newTable.created_at = newTable.created_at;
 		} else {
-			newTable.created_at = new Date()
+			newTable.created_at = new Date();
 		}
 		
 		return newTable;
 	},
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): AlabarraTable {
 		const data = snapshot.data(options);
-		data.id = snapshot.id
+		data.id = snapshot.id;
 		return data as AlabarraTable;
 	},
 };

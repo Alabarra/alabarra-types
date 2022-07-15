@@ -15,7 +15,7 @@
   "scripts": {
     "test": "tsc && node ./out/tests/index.js",
     "build": "tsc --build",
-    "deploy": "tsc --build && npm version patch && npm publish"
+    "deploy": "tsc --build && npm version patch && npm publish && git push origin master"
   },
   "keywords": [],
   "author": "",
