@@ -15,7 +15,7 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./Alabar
     /**
      *  Reference to the category where the product lives
      */
-    category: DocumentReference;
+    category_path: string;
 
     // This data will be generated server-side
     //created_at: Date;
