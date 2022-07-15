@@ -18,7 +18,7 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Path of the category
      */
-     ref?: DocumentReference;
+    ref?: DocumentReference;
 
     /**
      * Title or name of the category
@@ -33,7 +33,7 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Contained products
      */
-    products: DocumentReference[];
+    products: string[];
 
     /**
      * Short description of the category
