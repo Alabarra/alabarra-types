@@ -27,7 +27,7 @@ export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
 export * from "./cloud-functions/AlabarraCreateTable";
-export * from "./cloud-functions/orders/AlabarraConfirmPresentialPayment";
+export * from "./cloud-functions/orders/AlabarraConfirmManualPayment";
 
 export * from "./types/AlabarraResponse";
 

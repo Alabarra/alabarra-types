@@ -1,4 +1,3 @@
-import { DocumentReference, FieldValue } from "firebase/firestore";
 import { AlabarraProductOption, AlabarraProductStatus } from "./../../types/AlabarraProduct";
 import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
 
