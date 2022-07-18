@@ -16,16 +16,20 @@ export * from "./types/AlabarraTable";
     CLOUD FUNCTIONS INTERFACES
     --------------------------
 */
-export * from "./cloud-functions/AlabarraResponse";
-export * from "./cloud-functions/AlabarraCreateOrder";
+export * from "./cloud-functions/orders/AlabarraCreateOrder";
+export * from "./cloud-functions/orders/AlabarraStartProcessingOrder";
+export * from "./cloud-functions/orders/AlabarraSetOrderReadyForDelivery";
+export * from "./cloud-functions/orders/AlabarraFulfillOrder";
+
+
+export * from "./cloud-functions/menu/AlabarraCreateCategory";
+export * from "./cloud-functions/menu/AlabarraCreateProduct";
+export * from "./cloud-functions/menu/AlabarraEditProduct";
+
 export * from "./cloud-functions/AlabarraCreateTable";
-export * from "./cloud-functions/AlabarraCreateCategory";
-export * from "./cloud-functions/AlabarraCreateProduct";
-export * from "./cloud-functions/AlabarraEditProduct";
-export * from "./cloud-functions/AlabarraStartProcessingOrder";
-export * from "./cloud-functions/AlabarraConfirmPresentialPayment";
-export * from "./cloud-functions/AlabarraSetOrderReadyForDelivery";
-export * from "./cloud-functions/AlabarraFulfillOrder";
+export * from "./cloud-functions/orders/AlabarraConfirmPresentialPayment";
+
+export * from "./types/AlabarraResponse";
 
 
 /* 

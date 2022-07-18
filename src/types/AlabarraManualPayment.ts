@@ -8,17 +8,17 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * id of the category
      */
-     id?: string;
+    id?: string;
 
-     /**
-      * Path of the category
-      */
-     path?: string;
- 
-     /**
-      * Path of the category
-      */
-     ref?: DocumentReference;
+    /**
+     * Path of the category
+     */
+    path?: string;
+
+    /**
+     * Path of the category
+     */
+    ref?: DocumentReference;
 
     /**
      * Ref to the order that was confirmed
@@ -33,6 +33,5 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * General notes about the payment (e.g. Strip payment id 123), otherwise null
      */
-
     payment_notes: string | null;
 }

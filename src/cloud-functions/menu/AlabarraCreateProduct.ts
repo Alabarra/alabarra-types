@@ -1,6 +1,6 @@
 import { DocumentReference, FieldValue } from "firebase/firestore";
-import { AlabarraProductOption, AlabarraProductStatus } from "../types/AlabarraProduct";
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./AlabarraResponse";
+import { AlabarraProductOption, AlabarraProductStatus } from "./../../types/AlabarraProduct";
+import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
 
 /**
  * API to create a new table

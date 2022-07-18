@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./AlabarraResponse";
+import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../types/AlabarraResponse";
 
 /**
  * API to create a new table

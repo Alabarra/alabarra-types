@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from './AlabarraResponse'
+import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from './../../types/AlabarraResponse'
 /**
  * Represents a cart line
  */
