@@ -1,17 +1,17 @@
 /**
  * API for confirming a manual payment
  */
- export interface AlabarraConfirmPresentialPaymentData {
+ export interface AlabarraConfirmManualPaymentData {
 
     /**
      * Ref to the order
      */
-    order: string;
+    order_id: string;
 
     /**
      * Ref to the waiter/waitress that confirmed the order
      */
-    waiter: string;
+    waiter_id: string;
 
     /**
      * String referencing the payment confirmation, such a Stripe/transbank payment id
