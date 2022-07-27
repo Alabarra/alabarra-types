@@ -82,7 +82,7 @@ export interface AlabarraOrder {
     /**
      * Status of the current order
      */
-     status: AlabarraOrderStatus;
+    status: AlabarraOrderStatus;
 
     /**
      * Date of when the order was created in the server
@@ -127,7 +127,7 @@ export interface AlabarraOrder {
     /**
      * Destination of the order or null if the order is made directly in the restaurant
      */
-    table_number: number | null;
+    table_name: string | null;
 
     /**
      * Tip given by the user

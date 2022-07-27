@@ -39,9 +39,9 @@ export interface AlabarraCreateOrderData {
     cart: AlabarraCreateOrderDataCartLine[];
 
     /**
-     * Number of the table where the product should be delivered
+     * Name of the table where the product should be delivered
      */
-    table_number: number;
+    table_name: string;
 }
 
 

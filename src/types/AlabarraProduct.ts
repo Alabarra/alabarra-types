@@ -105,9 +105,9 @@ export interface AlabarraProductOptionSingleSelection extends AlabarraProductOpt
 export interface AlabarraProduct {
 
     /**
-     * id of the product
-     */
-     id?: string;
+    * id of the product
+    */
+    id?: string;
 
     /**
      * path of the product
@@ -115,9 +115,9 @@ export interface AlabarraProduct {
     path?: string;
 
     /**
-     * id of the product
-     */
-     ref?: DocumentReference;
+    * id of the product
+    */
+    ref?: DocumentReference;
 
     /**
      * Current status of the product

@@ -6,5 +6,5 @@
     /**
      * Ref to the order
      */
-    order: string;
+    order_id: string;
 }
