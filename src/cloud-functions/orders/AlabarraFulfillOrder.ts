@@ -4,7 +4,7 @@
  export interface AlabarraFulfillOrderData {
 
     /**
-     * Ref to the order
+     * Id to the order
      */
-    order: string;
+    order_id: string;
 }

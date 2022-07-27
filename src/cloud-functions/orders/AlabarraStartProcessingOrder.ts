@@ -4,7 +4,7 @@
  export interface AlabarraStartProcessingOrderData {
 
     /**
-     * Ref to the order
+     * Id to the order
      */
     order_id: string;
 }
