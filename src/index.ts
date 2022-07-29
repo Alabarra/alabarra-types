@@ -25,7 +25,7 @@ export * from "./cloud-functions/orders/AlabarraFulfillOrder";
 export * from "./cloud-functions/orders/AlabarraConfirmDigitalPayment";
 export * from "./cloud-functions/orders/AlabarraConfirmManualPayment";
 
-export * from "./cloud-functions/payments/AlabarraCreateStripePayment";
+export * from "./cloud-functions/payments/AlabarraCreateStripePaymentIntent";
 
 export * from "./cloud-functions/menu/AlabarraCreateCategory";
 export * from "./cloud-functions/menu/AlabarraCreateProduct";

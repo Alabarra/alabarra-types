@@ -3,7 +3,7 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "../../ty
 /**
  * API to create a new stripe payment
  */
- export interface AlabarraCreateStripePaymentData {
+ export interface AlabarraCreateStripePaymentIntentData {
 
     /**
      * Order id
@@ -14,10 +14,10 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "../../ty
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraCreateStripePaymentesponse = AlabarraCreateStripePaymentResponseSuccess | AlabarraResponseError;
+ export type AlabarraCreateStripePaymentIntentResponse = AlabarraCreateStripePaymentIntentResponseSuccess | AlabarraResponseError;
 
 
-export interface AlabarraCreateStripePaymentResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraCreateStripePaymentIntentResponseSuccess extends AlabarraResponseSuccessAbstract {
 
     result: {
         /**
