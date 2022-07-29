@@ -21,8 +21,8 @@ export interface AlabarraCreateStripePaymentIntentResponseSuccess extends Alabar
 
     result: {
         /**
-         * The ID of the order
+         * Client secret to finalize the payment
          */
-        order_id: string
+         payment_intent_client_secret: string
     }
 }
