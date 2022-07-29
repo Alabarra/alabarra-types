@@ -56,7 +56,7 @@ export interface AlabarraPayment {
     /**
      * Id of the order in question
      */
-    order_id: number;
+    order_id: string;
 
     /**
      * General note for the complete ticket
