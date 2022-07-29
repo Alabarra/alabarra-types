@@ -10,6 +10,8 @@ export * from "./types/AlabarraProduct";
 export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
 export * from "./types/AlabarraTable";
+export * from "./types/AlabarraPayment";
+export * from "./types/AlabarraResponse";
 
 /* 
     --------------------------
@@ -20,16 +22,17 @@ export * from "./cloud-functions/orders/AlabarraCreateOrder";
 export * from "./cloud-functions/orders/AlabarraStartProcessingOrder";
 export * from "./cloud-functions/orders/AlabarraSetOrderReadyForDelivery";
 export * from "./cloud-functions/orders/AlabarraFulfillOrder";
+export * from "./cloud-functions/orders/AlabarraConfirmDigitalPayment";
+export * from "./cloud-functions/orders/AlabarraConfirmManualPayment";
 
+export * from "./cloud-functions/payments/AlabarraCreateStripePayment";
 
 export * from "./cloud-functions/menu/AlabarraCreateCategory";
 export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
-export * from "./cloud-functions/AlabarraCreateTable";
-export * from "./cloud-functions/orders/AlabarraConfirmManualPayment";
+export * from "./cloud-functions/tables/AlabarraCreateTable";
 
-export * from "./types/AlabarraResponse";
 
 
 /* 
