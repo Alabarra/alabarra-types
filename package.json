@@ -1,6 +1,6 @@
 {
   "name": "@dvalenzuela-com/alabarra-types",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "",
   "main": "./out/index.js",
   "types": "./out/index.d.ts",
