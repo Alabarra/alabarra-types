@@ -33,6 +33,17 @@ export interface AlabarraPaymentPresentialCard extends AlabarraPayment {
     card_voucher_id: string;
 }
 
+export enum AlabarraPaymentStatus {
+    
+    OPEN = "OPEN",
+
+    PROCESSING = "PROCESSING",
+
+    SUCCEEDED = "SUCCEEDED",
+
+    FAILED = "FAILED"
+}
+
 /**
  * Represents a customer order
  */
@@ -52,6 +63,11 @@ export interface AlabarraPayment {
      * Type of payment
      */
     payment_type: AlabarraPaymentType;
+
+    /**
+     * Current status of the payment
+     */
+    payment_Status: AlabarraPaymentStatus;
 
     /**
      * Id of the order in question
