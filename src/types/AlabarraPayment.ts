@@ -67,7 +67,7 @@ export interface AlabarraPayment {
     /**
      * Current status of the payment
      */
-    payment_Status: AlabarraPaymentStatus;
+    payment_status: AlabarraPaymentStatus;
 
     /**
      * Id of the order in question
