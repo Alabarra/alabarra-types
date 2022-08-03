@@ -95,6 +95,11 @@ export interface AlabarraOrder {
     customer_id: string | null;
 
     /**
+     * name of the customer
+     */
+    customer_nickname: string | null;
+
+    /**
      * Total discount of the order
      */
     discount: number;
