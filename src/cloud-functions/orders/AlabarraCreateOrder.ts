@@ -27,7 +27,13 @@ export interface AlabarraCreateOrderData {
     /**
      * Ref to the customer
      */
-    customer: string;
+     customer_id: string;
+
+    /**
+     * Nickname for the customer
+     */
+     customer_nickname?: string;
+
     /**
      * note for the whole order (e.g. "please bring an extra glass. Thanks!")
      */
