@@ -9,7 +9,7 @@ export * from "./types/AlabarraCategory";
 export * from "./types/AlabarraProduct";
 export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
-export * from "./types/AlabarraTable";
+export * from "./types/ABTable";
 export * from "./types/AlabarraPayment";
 export * from "./types/AlabarraResponse";
 
@@ -43,7 +43,7 @@ export * from "./cloud-functions/tables/AlabarraCreateTable";
 export * from "./converters/AlabarraProductConverter"
 export * from "./converters/AlabarraCategoryConverter"
 export * from "./converters/AlabarraOrderConverter"
-export * from "./converters/AlabarraTableConverter"
+export * from "./converters/ABTableConverter"
 
 /* 
     --------------------------
