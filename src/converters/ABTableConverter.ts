@@ -19,16 +19,18 @@ export const TableConverter: FirestoreDataConverter<ABTable> = {
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABTable {
 		const data = snapshot.data(options) as ABTableData;
 	
-		const newObject: ABTable = {
+		const newTable: ABTable = {
 			id: snapshot.id,
 			path: snapshot.ref.path,
 			...data
 		};
 
+		newTable.created_at = (data.created_at as Timestamp).toDate();
+
 		if (data.updated_at) {
-			newObject.updated_at = (data.updated_at as Timestamp).toDate();
+			newTable.updated_at = (data.updated_at as Timestamp).toDate();
 		}
 
-		return newObject as ABTable;
+		return newTable;
 	},
 };

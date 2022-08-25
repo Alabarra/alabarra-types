@@ -18,17 +18,18 @@ export const ProductConverter: FirestoreDataConverter<ABProduct> = {
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABProduct {
 		const data = snapshot.data(options) as ABProductData;
 
-		const newObject: ABProduct = {
+		const newProduct: ABProduct = {
 			id: snapshot.id,
 			path: snapshot.ref.path,
 			...data
 		}
 
-		newObject.created_at = (data.created_at as Timestamp).toDate();
+		newProduct.created_at = (data.created_at as Timestamp).toDate();
+	
 		if (data.last_updated_at) {
-			newObject.last_updated_at = (data.last_updated_at as Timestamp).toDate();
+			newProduct.last_updated_at = (data.last_updated_at as Timestamp).toDate();
 		}
 
-		return newObject as ABProduct;
+		return newProduct;
 	},
 };
