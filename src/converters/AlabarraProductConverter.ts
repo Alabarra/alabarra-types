@@ -29,6 +29,6 @@ export const ProductConverter: FirestoreDataConverter<ABProduct> = {
 			newObject.last_updated_at = (data.last_updated_at as Timestamp).toDate();
 		}
 
-		return data as ABProduct;
+		return newObject as ABProduct;
 	},
 };
