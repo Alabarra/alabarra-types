@@ -1,6 +1,6 @@
 import { DocumentReference } from "firebase/firestore";
-import { AlabarraProductOption, AlabarraProductStatus } from "./../../types/AlabarraProduct";
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
+import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API to create a new table
@@ -41,7 +41,7 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
      /**
       *  Options of the product, if any
       */
-     options?: AlabarraProductOption[];
+     options?: ABProductOption[];
  
      /**
       *  Unit price
@@ -51,15 +51,15 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
      /**
       *  Status of the product. If none is given, active will be chosen
       */
-     status?: AlabarraProductStatus;
+     status?: ABProductStatus;
 }
 
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraEditProductResponse = AlabarraEditProductResponseSuccess | AlabarraResponseError;
+ export type AlabarraEditProductResponse = AlabarraEditProductResponseSuccess | ABResponseError;
 
-export interface AlabarraEditProductResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraEditProductResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

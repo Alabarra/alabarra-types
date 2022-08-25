@@ -1,5 +1,5 @@
 
-export enum AlabarraResponseStatus {
+export enum ABResponseStatus {
     SUCCESS = 'SUCCESS',
     ERROR = 'ERROR'
 }
@@ -7,12 +7,12 @@ export enum AlabarraResponseStatus {
 /**
  * Represents the result of a call to the Create Order API
  */
- export interface AlabarraResponseSuccessAbstract {
+ export interface ABResponseSuccessAbstract {
 
     /**
      * Whether the request succedded or failed
      */
-    status: AlabarraResponseStatus.SUCCESS;
+    status: ABResponseStatus.SUCCESS;
 
     /**
      * Result in case of success
@@ -23,12 +23,12 @@ export enum AlabarraResponseStatus {
 /**
  * Represents the result of a call to the Create Order API
  */
- export interface AlabarraResponseError {
+ export interface ABResponseError {
 
     /**
      * Whether the request succedded or failed
      */
-    status: AlabarraResponseStatus.ERROR;
+    status: ABResponseStatus.ERROR;
 
     /**
      * Error message in case of error

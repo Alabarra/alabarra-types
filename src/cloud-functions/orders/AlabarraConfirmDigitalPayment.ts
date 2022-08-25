@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API to create a new table
@@ -14,10 +14,10 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraConfirmDigitalPaymentResponse = AlabarraConfirmDigitalPaymentResponseSuccess | AlabarraResponseError;
+ export type AlabarraConfirmDigitalPaymentResponse = AlabarraConfirmDigitalPaymentResponseSuccess | ABResponseError;
 
 
-export interface AlabarraConfirmDigitalPaymentResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraConfirmDigitalPaymentResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

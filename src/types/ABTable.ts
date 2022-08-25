@@ -1,13 +1,11 @@
-import { DocumentData, DocumentReference, FieldValue } from "firebase/firestore";
-
 /**
  * Represents a product that can be ordered
  */
 export interface ABTable extends ABTableData {
 
     /**
-    * id of the table, which is in turn its name
-    */
+     * id of the table, which is in turn its name
+     */
     id: string;
 
     /**

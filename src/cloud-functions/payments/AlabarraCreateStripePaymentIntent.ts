@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "../../types/AlabarraResponse";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API to create a new stripe payment
@@ -14,10 +14,10 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "../../ty
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraCreateStripePaymentIntentResponse = AlabarraCreateStripePaymentIntentResponseSuccess | AlabarraResponseError;
+ export type AlabarraCreateStripePaymentIntentResponse = AlabarraCreateStripePaymentIntentResponseSuccess | ABResponseError;
 
 
-export interface AlabarraCreateStripePaymentIntentResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraCreateStripePaymentIntentResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

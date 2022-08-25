@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API to create a new category
@@ -20,12 +20,12 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
 /**
  * Represents the result of a call to the Create Category API
  */
-export type AlabarraCreateCategoryResponse = AlabarraCreateCategoryResponseSuccess | AlabarraResponseError;
+export type AlabarraCreateCategoryResponse = AlabarraCreateCategoryResponseSuccess | ABResponseError;
 
 /**
  * Represents a sucessfull cll to create category
  */
-export interface AlabarraCreateCategoryResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraCreateCategoryResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

@@ -3,7 +3,7 @@ import { DocumentReference } from "firebase/firestore";
 /**
  * Status of each product
  */
- export enum AlabarraProductStatus {
+ export enum ABProductStatus {
 
     /**
      * Product is active and in stock
@@ -19,7 +19,7 @@ import { DocumentReference } from "firebase/firestore";
 /**
  * Type of option, such as single selection, multiple selection, etc.
  */
-export enum AlabarraProductOptionsType {
+export enum ABProductOptionsType {
 
     /**
      * Single option selection, to be represented by radio buttons
@@ -35,7 +35,7 @@ export enum AlabarraProductOptionsType {
 /**
  * Generic container for product options
  */
-export interface AlabarraProductOptionsPossibleValues {
+export interface ABProductOptionsPossibleValues {
 
     /**
      * Customer-facing name of the possible value
@@ -48,15 +48,15 @@ export interface AlabarraProductOptionsPossibleValues {
     price_adjustment: number;
 }
 
-export type AlabarraProductOptionMultipleSelectionSelectedValues = boolean[];
-export type AlabarraProductOptionSingleSelectionSelectedValue = string;
+export type ABProductOptionMultipleSelectionSelectedValues = boolean[];
+export type ABProductOptionSingleSelectionSelectedValue = string;
 
-export interface AlabarraProductOptionMultipleSelection extends AlabarraProductOption {
+export interface ABProductOptionMultipleSelection extends ABProductOption {
 
     /**
      * Which possible values are checked
      */
-    default_values: AlabarraProductOptionMultipleSelectionSelectedValues;
+    default_values: ABProductOptionMultipleSelectionSelectedValues;
 
     /**
      * Maximum number of selections. if undefined, unlimited selection is possible
@@ -69,18 +69,18 @@ export interface AlabarraProductOptionMultipleSelection extends AlabarraProductO
     min_selection: number;
 }
 
-export interface AlabarraProductOptionSingleSelection extends AlabarraProductOption {
+export interface ABProductOptionSingleSelection extends ABProductOption {
 
     /**
      * Title of the default value
      */
-     default_value: AlabarraProductOptionSingleSelectionSelectedValue;
+     default_value: ABProductOptionSingleSelectionSelectedValue;
 }
 
 /**
  * Represents something that can be configured for the product
  */
- export interface AlabarraProductOption {
+ export interface ABProductOption {
 
     /**
      * Customer-facing title of the option
@@ -90,39 +90,50 @@ export interface AlabarraProductOptionSingleSelection extends AlabarraProductOpt
     /**
      * Type of option; Single selection, multiple selection, etc.
      */
-    type: AlabarraProductOptionsType;
+    type: ABProductOptionsType;
 
     /**
      * Array of the possible values this option can take
      */
-    possible_values: AlabarraProductOptionsPossibleValues[];
+    possible_values: ABProductOptionsPossibleValues[];
 }
 
 
 /**
  * Represents a product that can be ordered
  */
-export interface AlabarraProduct {
+ export interface ABProduct extends ABProductData {
 
     /**
     * id of the product
     */
-    id?: string;
+    id: string;
 
     /**
      * path of the product
      */
-    path?: string;
+    path: string;
 
     /**
-    * id of the product
-    */
-    ref?: DocumentReference;
+     * Date of product creation in the server
+     */
+    created_at: Date;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+    last_updated_at: Date | null;
+}
+
+/**
+ * Represents a product that can be ordered
+ */
+ export interface ABProductData {
 
     /**
      * Current status of the product
      */
-    status: AlabarraProductStatus;
+    status: ABProductStatus;
 
     /**
      * Title or name of the product
@@ -152,15 +163,15 @@ export interface AlabarraProduct {
     /**
      * Date of product creation in the server
      */
-    created_at?: Date;
+    created_at: any;
 
     /**
      * Last time the product was modified. Null in case the product was never modified
      */
-    last_updated_at: Date | null;
+    last_updated_at: any;
 
     /**
      * Possible options to configure the product
      */
-    options?: AlabarraProductOption[];
+    options?: ABProductOption[];
 }

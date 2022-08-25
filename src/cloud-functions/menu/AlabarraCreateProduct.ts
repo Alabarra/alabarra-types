@@ -1,10 +1,10 @@
-import { AlabarraProductOption, AlabarraProductStatus } from "./../../types/AlabarraProduct";
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../types/AlabarraResponse";
+import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API to create a new table
  */
- export interface AlabarraCreateProductData {
+ export interface ABCreateProductData {
 
     /**
      *  Visible name of the product
@@ -14,7 +14,7 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
     /**
      *  Reference to the category where the product lives
      */
-    category_path: string;
+    category_id: string;
 
     // This data will be generated server-side
     //created_at: Date;
@@ -35,7 +35,7 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
     /**
      *  Options of the product, if any
      */
-    options?: AlabarraProductOption[];
+    options?: ABProductOption[];
 
     /**
      *  Unit price
@@ -43,18 +43,18 @@ import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from "./../../
     price: number;
 
     /**
-     *  Status of the product. If none is given, active will be chosen
+     *  Status of the product
      */
-    status?: AlabarraProductStatus;
+    status: ABProductStatus;
 
 }
 
 /**
  * Represents the result of a call to the Create Order API
  */
-export type AlabarraCreateProductResponse = AlabarraCreateProductResponseSuccess | AlabarraResponseError;
+export type ABCreateProductResponse = ABCreateProductResponseSuccess | ABResponseError;
 
-export interface AlabarraCreateProductResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface ABCreateProductResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

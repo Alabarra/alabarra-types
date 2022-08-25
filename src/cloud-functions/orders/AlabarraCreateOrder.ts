@@ -1,4 +1,4 @@
-import { AlabarraResponseError, AlabarraResponseSuccessAbstract } from './../../types/AlabarraResponse'
+import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
 /**
  * Represents a cart line
  */
@@ -54,9 +54,9 @@ export interface AlabarraCreateOrderData {
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraCreateOrderResponse = AlabarraCreateOrderResponseSuccess | AlabarraResponseError;
+ export type AlabarraCreateOrderResponse = AlabarraCreateOrderResponseSuccess | ABResponseError;
 
-export interface AlabarraCreateOrderResponseSuccess extends AlabarraResponseSuccessAbstract {
+export interface AlabarraCreateOrderResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

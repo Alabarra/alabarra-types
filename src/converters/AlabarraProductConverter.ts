@@ -1,9 +1,9 @@
-import { AlabarraProduct } from "../types/AlabarraProduct";
+import { ABProduct, ABProductData } from "../types/ABProduct";
 import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, serverTimestamp, SnapshotOptions, Timestamp, WithFieldValue } from 'firebase/firestore';
 
 
-export const ProductConverter: FirestoreDataConverter<AlabarraProduct> = {
-	toFirestore(product: WithFieldValue<AlabarraProduct>): DocumentData {
+export const ProductConverter: FirestoreDataConverter<ABProduct> = {
+	toFirestore(product: WithFieldValue<ABProduct>): DocumentData {
 
 		let newProduct = product;
 		
@@ -15,17 +15,20 @@ export const ProductConverter: FirestoreDataConverter<AlabarraProduct> = {
 		
 		return newProduct;
 	},
-	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): AlabarraProduct {
-		const data = snapshot.data(options);
-		data.id = snapshot.id;
-		data.ref = snapshot.ref;
-		data.path = snapshot.ref.path;
-		if (data.created_at != undefined && data.created_at != null) {
-			data.created_at = (data.created_at as Timestamp).toDate()
+	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABProduct {
+		const data = snapshot.data(options) as ABProductData;
+
+		const newObject: ABProduct = {
+			id: snapshot.id,
+			path: snapshot.ref.path,
+			...data
 		}
-		if (data.last_updated_at != undefined && data.last_updated_at != null) {
-			data.last_updated_at = (data.last_updated_at as Timestamp).toDate()
+
+		newObject.created_at = (data.created_at as Timestamp).toDate();
+		if (data.last_updated_at) {
+			newObject.last_updated_at = (data.last_updated_at as Timestamp).toDate();
 		}
-		return data as AlabarraProduct;
+
+		return data as ABProduct;
 	},
 };

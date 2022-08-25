@@ -1,5 +1,5 @@
 import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, serverTimestamp, SnapshotOptions, Timestamp, WithFieldValue } from 'firebase/firestore';
-import { ABTable } from "../types/ABTable";
+import { ABTable, ABTableData } from "../types/ABTable";
 
 
 export const TableConverter: FirestoreDataConverter<ABTable> = {
@@ -17,14 +17,12 @@ export const TableConverter: FirestoreDataConverter<ABTable> = {
 	},
 	
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABTable {
-		const data = snapshot.data(options);
+		const data = snapshot.data(options) as ABTableData;
 	
 		const newObject: ABTable = {
 			id: snapshot.id,
 			path: snapshot.ref.path,
-			table_name: data.table_name,
-			created_at: (data.created_at as Timestamp).toDate(),
-			updated_at: null
+			...data
 		};
 
 		if (data.updated_at) {

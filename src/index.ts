@@ -6,12 +6,12 @@
 
 export * from "./types/AlabarraOrder";
 export * from "./types/AlabarraCategory";
-export * from "./types/AlabarraProduct";
+export * from "./types/ABProduct";
 export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
 export * from "./types/ABTable";
 export * from "./types/AlabarraPayment";
-export * from "./types/AlabarraResponse";
+export * from "./cloud-functions/ABResponse";
 
 /* 
     --------------------------
@@ -31,7 +31,7 @@ export * from "./cloud-functions/menu/AlabarraCreateCategory";
 export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
-export * from "./cloud-functions/tables/AlabarraCreateTable";
+export * from "./cloud-functions/tables/ABCreateTable";
 
 
 
