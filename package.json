@@ -15,8 +15,7 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "postbuild": "",
-    "deploy": "npm run build  && npm postbuild && npm version patch && npm publish && git push origin master"
+    "deploy": "npm run build && npm version patch && npm publish && git push origin master"
   },
   "keywords": [],
   "author": "",
