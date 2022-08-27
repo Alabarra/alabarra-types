@@ -56,7 +56,7 @@ function typeScriptToJsonSchema(srcDir, destDir)
 {
   const config = {
     path: srcDir+"/**/*.ts",
-    type: "ABCreateTableData",
+    type: "*",
   };
 
   let schemas = [];
@@ -116,20 +116,26 @@ async function generateTypings(validationFile, validationFileFolder)
   console.timeEnd("* TSC DECLARATIONS");
 }
 
+function moveToSrc(startPath, finalPath) {
+  fs.copyFileSync(startPath, finalPath);
+}
+
 
 async function buildTypes()
 {
   let paths = {
-    types: path.resolve(__dirname + "/types"),
-    typesJsonSchema: path.resolve(__dirname + "/types/schemas"),
-    validationFile: path.resolve(__dirname + "/types/schemas/validations.js"),
+    types: path.resolve(__dirname + "/src/cloud-functions"),
+    typesJsonSchema: path.resolve(__dirname + "/build/schemas"),
+    validationPath: path.resolve(__dirname + "/build/"),
+    validationFile: path.resolve(__dirname + "/build/validations.js"),
+    finalValidationFile: path.resolve(__dirname + "/src/validations.js")
   };
 
   /* Clear the output dir for the AJV validation code, definition and JSON Schema definitions */
   clearDir(paths.typesJsonSchema);
 
   /* Create the JSON Schema files from the TS Types and save them as individual JSON Schema files */
-  let schemas =  typeScriptToJsonSchema(paths.types, paths.typesJsonSchema);
+  let schemas = typeScriptToJsonSchema(paths.types, paths.typesJsonSchema);
 
   /* Create the AJV validation code in ESM format from the JSON Schema files */
   compileAjvStandalone(schemas, paths.validationFile);
@@ -137,8 +143,11 @@ async function buildTypes()
   /* Bundle the AJV validation code file in ESM format */
   esBuildCommonToEsm(paths.validationFile);
 
+  /* Move to src file to be used by tsc */
+  moveToSrc(paths.validationFile, paths.finalValidationFile);
+
   /* Create TypeScript typings for the generated AJV validation code */
-  await generateTypings(paths.validationFile, paths.typesJsonSchema);
+  await generateTypings(paths.validationFile, paths.validationPath);
 }
 
 (async () => {

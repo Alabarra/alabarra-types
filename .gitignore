@@ -178,3 +178,5 @@ dist
 
 # Do not commit anything inside out
 out/
+# Do not commit anything in the work directory
+build/

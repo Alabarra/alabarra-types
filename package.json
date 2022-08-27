@@ -10,10 +10,10 @@
   ],
   "dependencies": {
     "firebase": "^9.8.2",
-    "gulp": "^4.0.2",
     "tslib": "^2.4.0"
   },
   "scripts": {
+    "prebuild": "node generateCloudFunctionValidators.js",
     "build": "tsc --build",
     "deploy": "npm run build && npm version patch && npm publish && git push origin master"
   },

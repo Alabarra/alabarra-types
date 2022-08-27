@@ -1,4 +1,3 @@
-import { DocumentReference } from "firebase/firestore";
 import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
@@ -20,7 +19,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      /**
       *  Reference to the category where the product lives
       */
-     category?: DocumentReference;
+     category?: string;
  
      // This data will be generated server-side
      //created_at: Date;
