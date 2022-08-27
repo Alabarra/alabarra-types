@@ -50,4 +50,4 @@ export * from "./converters/ABTableConverter"
     COLLECTIONS
     --------------------------
 */
-export * from "./validations"
+export * from "./schemas/validations"

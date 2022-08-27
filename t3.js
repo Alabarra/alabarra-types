@@ -98,7 +98,7 @@ function esBuildCommonToEsm(validationFile)
   esbuild.buildSync({
     // minify: true,
     bundle: true,
-    target: ["node14"],
+    target: ["node16"],
     keepNames: true,
     platform: 'node',
     format: "esm",
