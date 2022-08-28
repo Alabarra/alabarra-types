@@ -1,6 +1,6 @@
 {
   "name": "@dvalenzuela-com/alabarra-types",
-  "version": "1.0.52",
+  "version": "1.0.51",
   "description": "",
   "main": "./out/index.js",
   "types": "./out/index.d.ts",
@@ -23,8 +23,6 @@
   "devDependencies": {
     "ajv-formats": "^2.1.1",
     "esbuild": "^0.15.5",
-    "ts-json-schema-generator": "^1.0.0",
-    "typescript-json-schema": "^0.54.0",
-    "typescript-json-validator": "^2.4.2"
+    "ts-json-schema-generator": "^1.0.0"
   }
 }
