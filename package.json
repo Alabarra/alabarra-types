@@ -15,6 +15,7 @@
   "scripts": {
     "prebuild": "node generateCloudFunctionValidators.js",
     "build": "tsc --build",
+    "postbuild": "node restoreValidations.js",
     "deploy": "npm run build && npm version patch && npm publish && git push origin master"
   },
   "keywords": [],

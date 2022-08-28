@@ -181,6 +181,3 @@ out/
 
 # Do not commit anything in the work directory
 build/
-
-# Do not change validation.js
-src/validation.js
