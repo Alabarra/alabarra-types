@@ -16,7 +16,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
     /**
      * note for the particular line (e.g. "Cooked medium-rare please", "No ice")
      */
-    note: string;
+    note: string | null;
 }
 
 /**
