@@ -2146,6 +2146,7 @@ function validate32(data, { instancePath = "", parentData, parentDataProperty, r
 }
 __name(validate32, "validate32");
 var AlabarraCreateOrderDataCartLine = validate33;
+var schema45 = { "$id": "AlabarraCreateOrderDataCartLine", "$schema": "http://json-schema.org/draft-07/schema#", "type": "object", "properties": { "product_id": { "type": "string", "description": "Ref to the product" }, "quantity": { "type": "number", "description": "number of products" }, "note": { "type": ["string", "null"], "description": 'note for the particular line (e.g. "Cooked medium-rare please", "No ice")' } }, "required": ["product_id", "quantity", "note"], "additionalProperties": false, "description": "Represents a cart line" };
 function validate33(data, { instancePath = "", parentData, parentDataProperty, rootData = data } = {}) {
   ;
   let vErrors = null;
@@ -2190,9 +2191,10 @@ function validate33(data, { instancePath = "", parentData, parentDataProperty, r
             }
             if (valid0) {
               if (data.note !== void 0) {
+                let data2 = data.note;
                 const _errs6 = errors;
-                if (typeof data.note !== "string") {
-                  validate33.errors = [{ instancePath: instancePath + "/note", schemaPath: "#/properties/note/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+                if (typeof data2 !== "string" && data2 !== null) {
+                  validate33.errors = [{ instancePath: instancePath + "/note", schemaPath: "#/properties/note/type", keyword: "type", params: { type: schema45.properties.note.type }, message: "must be string,null" }];
                   return false;
                 }
                 var valid0 = _errs6 === errors;
@@ -2319,9 +2321,10 @@ function validate34(data, { instancePath = "", parentData, parentDataProperty, r
                                   }
                                   if (valid3) {
                                     if (data4.note !== void 0) {
+                                      let data7 = data4.note;
                                       const _errs18 = errors;
-                                      if (typeof data4.note !== "string") {
-                                        validate34.errors = [{ instancePath: instancePath + "/cart/" + i0 + "/note", schemaPath: "AlabarraCreateOrderDataCartLine/properties/note/type", keyword: "type", params: { type: "string" }, message: "must be string" }];
+                                      if (typeof data7 !== "string" && data7 !== null) {
+                                        validate34.errors = [{ instancePath: instancePath + "/cart/" + i0 + "/note", schemaPath: "AlabarraCreateOrderDataCartLine/properties/note/type", keyword: "type", params: { type: schema45.properties.note.type }, message: "must be string,null" }];
                                         return false;
                                       }
                                       var valid3 = _errs18 === errors;
