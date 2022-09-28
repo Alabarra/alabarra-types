@@ -25,9 +25,9 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     description: string;
 
     /**
-     *  Image URL for the product
+     *  Path to the image in the default bucket
      */
-    image_url: string;
+    temp_image_path: string;
 
     //will be generated server-side
     //last_updated_at: Date | null;
