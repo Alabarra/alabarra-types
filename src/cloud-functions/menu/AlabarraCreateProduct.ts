@@ -27,7 +27,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      *  Path to the image in the default bucket
      */
-    temp_image_path: string;
+    image_temp_path: string;
 
     //will be generated server-side
     //last_updated_at: Date | null;
