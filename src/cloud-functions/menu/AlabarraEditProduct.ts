@@ -4,7 +4,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * API to create a new table
  */
- export interface AlabarraEditProductData {
+ export interface ABEditProductData {
 
     /**
      * Table name
@@ -29,10 +29,10 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
       */
      description?: string;
  
-     /**
-      *  Image URL for the product
-      */
-     image_url?: string;
+    /**
+     *  Path to the image in the default bucket
+     */
+     image_temp_path: string;
  
      //will be updated server-side
      //last_updated_at: Date | null;
@@ -56,9 +56,9 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraEditProductResponse = AlabarraEditProductResponseSuccess | ABResponseError;
+export type ABEditProductResponse = ABEditProductResponseSuccess | ABResponseError;
 
-export interface AlabarraEditProductResponseSuccess extends ABResponseSuccessAbstract {
+export interface ABEditProductResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**
