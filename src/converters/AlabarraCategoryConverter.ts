@@ -1,9 +1,9 @@
 import { DocumentData, Firestore, FirestoreDataConverter, QueryDocumentSnapshot, serverTimestamp, SnapshotOptions, Timestamp, WithFieldValue } from 'firebase/firestore';
-import { AlabarraCategory } from '../types/AlabarraCategory';
+import { ABCategory } from '../types/AlabarraCategory';
 
 
-export const CategoryConverter: FirestoreDataConverter<AlabarraCategory> = {
-	toFirestore(category: WithFieldValue<AlabarraCategory>): DocumentData {
+export const CategoryConverter: FirestoreDataConverter<ABCategory> = {
+	toFirestore(category: WithFieldValue<ABCategory>): DocumentData {
 
 		let newCategory = category;
 		
@@ -15,7 +15,7 @@ export const CategoryConverter: FirestoreDataConverter<AlabarraCategory> = {
 		
 		return newCategory;
 	},
-	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): AlabarraCategory {
+	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABCategory {
 		const data = snapshot.data(options);
 		data.id = snapshot.id;
         data.ref = snapshot.ref;
@@ -26,6 +26,6 @@ export const CategoryConverter: FirestoreDataConverter<AlabarraCategory> = {
 		if (data.last_updated_at != undefined && data.last_updated_at != null) {
 			data.last_updated_at = (data.last_updated_at as Timestamp).toDate()
 		}
-		return data as AlabarraCategory;
+		return data as ABCategory;
 	},
 };
