@@ -23,7 +23,7 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     updated_at: Date | null;
+     last_updated_at: Date | null;
 }
 
 /**
@@ -50,4 +50,9 @@ import { DocumentReference } from "firebase/firestore";
      * General notes about the payment (e.g. Strip payment id 123), otherwise null
      */
     payment_notes: string | null;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     last_updated_at: Date | null;
 }

@@ -26,7 +26,7 @@ export interface ABTable extends ABTableData {
     /**
      * Date of product creation in the server
      */
-     updated_at: Date | null;
+     last_updated_at: Date | null;
  }
 
 
@@ -52,6 +52,6 @@ export interface ABTableData {
     /**
      * Date of product creation in the server
      */
-    updated_at: any;
+     last_updated_at: any;
 }
  

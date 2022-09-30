@@ -1,9 +1,9 @@
 import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, serverTimestamp, SnapshotOptions, Timestamp, WithFieldValue } from 'firebase/firestore';
-import { AlabarraOrder } from "../types/AlabarraOrder";
+import { ABOrder } from "../types/AlabarraOrder";
 
 
-export const OrderConverter: FirestoreDataConverter<AlabarraOrder> = {
-	toFirestore(order: WithFieldValue<AlabarraOrder>): DocumentData {
+export const OrderConverter: FirestoreDataConverter<ABOrder> = {
+	toFirestore(order: WithFieldValue<ABOrder>): DocumentData {
 		
 		let newOrder = order
 		if (newOrder.created_at != undefined) {
@@ -13,7 +13,7 @@ export const OrderConverter: FirestoreDataConverter<AlabarraOrder> = {
 		}
 		return newOrder;
 	},
-	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): AlabarraOrder {
+	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABOrder {
 		const data = snapshot.data(options);
 		data.id = snapshot.id
         data.ref = snapshot.ref;
@@ -24,6 +24,6 @@ export const OrderConverter: FirestoreDataConverter<AlabarraOrder> = {
 		if (data.last_updated_at != undefined && data.last_updated_at != null) {
 			data.last_updated_at = (data.last_updated_at as Timestamp).toDate()
 		}
-		return data as AlabarraOrder;
+		return data as ABOrder;
 	},
 };

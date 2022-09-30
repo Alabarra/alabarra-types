@@ -27,8 +27,8 @@ export const TableConverter: FirestoreDataConverter<ABTable> = {
 
 		newTable.created_at = (data.created_at as Timestamp).toDate();
 
-		if (data.updated_at) {
-			newTable.updated_at = (data.updated_at as Timestamp).toDate();
+		if (data.last_updated_at) {
+			newTable.last_updated_at = (data.last_updated_at as Timestamp).toDate();
 		}
 
 		return newTable;

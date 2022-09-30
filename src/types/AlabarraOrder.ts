@@ -169,4 +169,9 @@ export interface ABOrderData {
      * total price of the order, including all lines, discounts and tip
      */
     total_price: number;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     last_updated_at: Date | null;
 }

@@ -23,7 +23,7 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     updated_at: Date | null;
+     last_updated_at: Date | null;
 }
 
 /**
@@ -64,5 +64,5 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     updated_at: Date | null;
+     last_updated_at: Date | null;
 }

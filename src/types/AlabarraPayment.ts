@@ -110,4 +110,9 @@ export interface ABPaymentData {
      * total amount paid
      */
     total_amount: number;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     last_updated_at: Date | null;
 }
