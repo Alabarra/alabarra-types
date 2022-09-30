@@ -3,7 +3,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * API to create a new table
  */
- export interface AlabarraConfirmDigitalPaymentData {
+ export interface ABConfirmDigitalPaymentData {
 
     /**
      * Order id
@@ -14,10 +14,10 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraConfirmDigitalPaymentResponse = AlabarraConfirmDigitalPaymentResponseSuccess | ABResponseError;
+ export type ABConfirmDigitalPaymentResponse = ABConfirmDigitalPaymentResponseSuccess | ABResponseError;
 
 
-export interface AlabarraConfirmDigitalPaymentResponseSuccess extends ABResponseSuccessAbstract {
+export interface ABConfirmDigitalPaymentResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

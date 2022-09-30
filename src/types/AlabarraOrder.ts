@@ -2,8 +2,13 @@
 /**
  * Represents a line in an order
  */
-export interface AlabarraOrderLineItem {
+export interface ABOrderLineItem {
 
+    /**
+     * id of the line. Must be unique within the order.
+     */
+    line_id: string;
+     
     /**
      * Note for the given line
      */
@@ -38,7 +43,7 @@ export interface AlabarraOrderLineItem {
 /**
  * Status an order can be in
  */
-export enum AlabarraOrderStatus {
+export enum ABOrderStatus {
     /**
      * Order just created
      */
@@ -70,24 +75,45 @@ export enum AlabarraOrderStatus {
 }
 
 /**
- * Represents a customer order
+ * Represents a product that can be ordered
  */
-export interface AlabarraOrder {
+ export interface ABOrder extends ABOrderData {
 
     /**
-     * id of the order
+    * id of the product
+    */
+    id: string;
+
+    /**
+     * path of the product
      */
-    id?: string;
+    path: string;
+
+    /**
+     * Date of product creation in the server
+     */
+    created_at: Date;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     updated_at: Date | null;
+}
+
+/**
+ * Represents a customer order
+ */
+export interface ABOrderData {
 
     /**
      * Status of the current order
      */
-    status: AlabarraOrderStatus;
+    status: ABOrderStatus;
 
     /**
      * Date of when the order was created in the server
      */
-    created_at?: Date;
+    created_at?: any;
 
     /**
      * Ref to the customer that created this order
@@ -117,7 +143,7 @@ export interface AlabarraOrder {
     /**
      * List of all lines within the order
      */
-    line_items: AlabarraOrderLineItem[]
+    line_items: ABOrderLineItem[]
 
     /**
      * In case of presential payment: Ref to the waiter that confirmed the payment, otherwise null

@@ -1,24 +1,35 @@
 import { DocumentReference } from "firebase/firestore";
 
 /**
- * Represents a customer with an account
+ * Represents a product that can be ordered
  */
- export interface AlabarraCustomer {
+ export interface ABCustomer extends ABCustomerData {
 
     /**
-     * id of the category
-     */
-     id?: string;
+    * id of the product
+    */
+    id: string;
 
-     /**
-      * Path of the category
-      */
-     path?: string;
- 
-     /**
-      * Path of the category
-      */
-     ref?: DocumentReference;
+    /**
+     * path of the product
+     */
+    path: string;
+
+    /**
+     * Date of product creation in the server
+     */
+    created_at: Date;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     updated_at: Date | null;
+}
+
+/**
+ * Represents a customer with an account
+ */
+ export interface ABCustomerData {
 
     /**
      * First name of the customer
@@ -48,5 +59,10 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Date of account creation
      */
-    created_at?: Date;
+    created_at?: any;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     updated_at: Date | null;
 }

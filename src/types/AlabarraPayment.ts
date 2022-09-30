@@ -3,7 +3,7 @@
 /**
  * Type of payment
  */
-export enum AlabarraPaymentType {
+export enum ABPaymentType {
     /**
      * Paid presentially via cash
      */
@@ -19,21 +19,21 @@ export enum AlabarraPaymentType {
 }
 
 
-export interface AlabarraPaymentStripe extends AlabarraPayment {
+export interface ABPaymentStripe extends ABPayment {
 
-    payment_type: AlabarraPaymentType.DIGITAL_STRIPE;
+    payment_type: ABPaymentType.DIGITAL_STRIPE;
 
     stripe_payment_id: string;
 }
 
-export interface AlabarraPaymentPresentialCard extends AlabarraPayment {
+export interface ABPaymentPresentialCard extends ABPayment {
 
-    payment_type: AlabarraPaymentType.PRESENTIAL_CARD;
+    payment_type: ABPaymentType.PRESENTIAL_CARD;
 
     card_voucher_id: string;
 }
 
-export enum AlabarraPaymentStatus {
+export enum ABPaymentStatus {
     
     OPEN = "OPEN",
 
@@ -47,27 +47,49 @@ export enum AlabarraPaymentStatus {
 /**
  * Represents a customer order
  */
-export interface AlabarraPayment {
+/**
+ * Represents a product that can be ordered
+ */
+ export interface ABPayment extends ABPaymentData {
 
     /**
-     * id of the payment
+    * id of the product
+    */
+    id: string;
+
+    /**
+     * path of the product
      */
-    id?: string;
+    path: string;
+
+    /**
+     * Date of product creation in the server
+     */
+    created_at: Date;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+    last_updated_at: Date | null;
+}
+
+
+export interface ABPaymentData {
 
     /**
      * Date of when the order was created in the server
      */
-    created_at?: Date;
+    created_at: any;
 
     /**
      * Type of payment
      */
-    payment_type: AlabarraPaymentType;
+    payment_type: ABPaymentType;
 
     /**
      * Current status of the payment
      */
-    payment_status: AlabarraPaymentStatus;
+    payment_status: ABPaymentStatus;
 
     /**
      * Id of the order in question

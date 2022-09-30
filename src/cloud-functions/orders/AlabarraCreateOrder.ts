@@ -54,7 +54,7 @@ export interface AlabarraCreateOrderData {
 /**
  * Represents the result of a call to the Create Order API
  */
- export type AlabarraCreateOrderResponse = AlabarraCreateOrderResponseSuccess | ABResponseError;
+export type AlabarraCreateOrderResponse = AlabarraCreateOrderResponseSuccess | ABResponseError;
 
 export interface AlabarraCreateOrderResponseSuccess extends ABResponseSuccessAbstract {
 

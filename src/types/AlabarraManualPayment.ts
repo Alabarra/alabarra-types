@@ -1,24 +1,40 @@
 import { DocumentReference } from "firebase/firestore";
 
 /**
+ * Represents a product that can be ordered
+ */
+ export interface ABManualPayment extends ABManualPaymentData {
+
+    /**
+    * id of the product
+    */
+    id: string;
+
+    /**
+     * path of the product
+     */
+    path: string;
+
+    /**
+     * Date of product creation in the server
+     */
+    created_at: Date;
+
+    /**
+     * Last time the product was modified. Null in case the product was never modified
+     */
+     updated_at: Date | null;
+}
+
+/**
  * Represents a manual payment
  */
- export interface AlabarraManualPayment {
+ export interface ABManualPaymentData {
 
     /**
-     * id of the category
+     * Date of product creation in the server
      */
-    id?: string;
-
-    /**
-     * Path of the category
-     */
-    path?: string;
-
-    /**
-     * Path of the category
-     */
-    ref?: DocumentReference;
+    created_at?: any;
 
     /**
      * Ref to the order that was confirmed

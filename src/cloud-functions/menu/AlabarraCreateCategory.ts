@@ -3,7 +3,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * API to create a new category
  */
- export interface AlabarraCreateCategoryData {
+ export interface ABCreateCategoryData {
 
     /**
      * Category name
@@ -20,12 +20,12 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 /**
  * Represents the result of a call to the Create Category API
  */
-export type AlabarraCreateCategoryResponse = AlabarraCreateCategoryResponseSuccess | ABResponseError;
+export type ABCreateCategoryResponse = ABCreateCategoryResponseSuccess | ABResponseError;
 
 /**
  * Represents a sucessfull cll to create category
  */
-export interface AlabarraCreateCategoryResponseSuccess extends ABResponseSuccessAbstract {
+export interface ABCreateCategoryResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**

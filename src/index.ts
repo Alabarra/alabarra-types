@@ -3,7 +3,6 @@
     DATABASE INTERFACES
     -------------------
 */
-
 export * from "./types/AlabarraOrder";
 export * from "./types/AlabarraCategory";
 export * from "./types/ABProduct";
@@ -32,8 +31,6 @@ export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
 export * from "./cloud-functions/tables/ABCreateTable";
-
-
 
 /* 
     --------------------------

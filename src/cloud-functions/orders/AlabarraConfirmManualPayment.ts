@@ -1,9 +1,10 @@
-import { AlabarraPaymentType } from "../../types/AlabarraPayment";
+import { ABPaymentType } from "../../types/AlabarraPayment";
+import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
  * API for confirming a manual payment
  */
- export interface AlabarraConfirmManualPaymentData {
+ export interface ABConfirmManualPaymentData {
 
     /**
      * Ref to the order
@@ -23,10 +24,26 @@ import { AlabarraPaymentType } from "../../types/AlabarraPayment";
     /**
      * Type of manual payment
      */
-    payment_type: AlabarraPaymentType;
+    payment_type: ABPaymentType;
 
     /**
      * Amount paid
      */
     payment_total: number;
+}
+
+/**
+ * Represents the result of a call to the Create Order API
+ */
+ export type ABConfirmManualPaymentResponse = ABConfirmManualPaymentResponseSuccess | ABResponseError;
+
+
+export interface ABConfirmManualPaymentResponseSuccess extends ABResponseSuccessAbstract {
+
+    result: {
+        /**
+         * The ID of the order
+         */
+        order_id: string
+    }
 }
