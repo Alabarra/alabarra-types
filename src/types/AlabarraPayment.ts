@@ -19,14 +19,14 @@ export enum ABPaymentType {
 }
 
 
-export interface ABPaymentStripe extends ABPayment {
+export interface ABPaymentDataStripe extends ABPaymentData {
 
     payment_type: ABPaymentType.DIGITAL_STRIPE;
 
     stripe_payment_id: string;
 }
 
-export interface ABPaymentPresentialCard extends ABPayment {
+export interface ABPaymentDataPresentialCard extends ABPaymentData {
 
     payment_type: ABPaymentType.PRESENTIAL_CARD;
 
