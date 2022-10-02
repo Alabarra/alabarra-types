@@ -2,7 +2,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
 /**
  * Represents a cart line
  */
- export interface AlabarraCreateOrderDataCartLine {
+ export interface ABCreateOrderDataCartLine {
     /**
      * Ref to the product
      */
@@ -22,7 +22,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
 /**
  * API for creating a new order
  */
-export interface AlabarraCreateOrderData {
+export interface ABCreateOrderData {
 
     /**
      * Ref to the customer
@@ -42,7 +42,7 @@ export interface AlabarraCreateOrderData {
     /**
      * Array with the orders. Should not be empty
      */
-    cart: AlabarraCreateOrderDataCartLine[];
+    cart: ABCreateOrderDataCartLine[];
 
     /**
      * Name of the table where the product should be delivered
@@ -54,9 +54,9 @@ export interface AlabarraCreateOrderData {
 /**
  * Represents the result of a call to the Create Order API
  */
-export type AlabarraCreateOrderResponse = AlabarraCreateOrderResponseSuccess | ABResponseError;
+export type ABCreateOrderResponse = ABCreateOrderResponseSuccess | ABResponseError;
 
-export interface AlabarraCreateOrderResponseSuccess extends ABResponseSuccessAbstract {
+export interface ABCreateOrderResponseSuccess extends ABResponseSuccessAbstract {
 
     result: {
         /**
