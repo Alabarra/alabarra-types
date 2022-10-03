@@ -1,9 +1,8 @@
 /*
     -------------------
-    TYPES 
+    DATABASE TYPES 
     -------------------
 */
-export * from "./types/ABStripeMetadata";
 
 export * from "./types/AlabarraOrder";
 export * from "./types/AlabarraCategory";
@@ -19,6 +18,9 @@ export * from "./cloud-functions/ABResponse";
     CLOUD FUNCTIONS INTERFACES
     --------------------------
 */
+
+export * from "./cloud-functions/ABStripeMetadata";
+
 export * from "./cloud-functions/orders/AlabarraCreateOrder";
 export * from "./cloud-functions/orders/AlabarraStartProcessingOrder";
 export * from "./cloud-functions/orders/AlabarraSetOrderReadyForDelivery";
