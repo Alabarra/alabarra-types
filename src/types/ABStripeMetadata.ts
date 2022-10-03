@@ -1,5 +1,5 @@
 
-export interface ABStripeMetadata {
+export type ABStripeMetadata = {
 
     /**
      * id of the table, which is in turn its name
