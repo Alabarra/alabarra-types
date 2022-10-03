@@ -1,8 +1,10 @@
 /*
     -------------------
-    DATABASE INTERFACES
+    TYPES 
     -------------------
 */
+export * from "./types/ABStripeMetadata";
+
 export * from "./types/AlabarraOrder";
 export * from "./types/AlabarraCategory";
 export * from "./types/ABProduct";
