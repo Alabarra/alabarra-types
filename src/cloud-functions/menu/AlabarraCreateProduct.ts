@@ -7,6 +7,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABCreateProductData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      *  Visible name of the product
      */
     title: string;

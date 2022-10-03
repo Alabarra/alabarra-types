@@ -6,6 +6,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABStartProcessingOrderData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Id to the order
      */
     order_id: string;

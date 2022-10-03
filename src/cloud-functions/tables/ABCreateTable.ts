@@ -6,6 +6,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABCreateTableData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Table name
      */
     table_name: string;

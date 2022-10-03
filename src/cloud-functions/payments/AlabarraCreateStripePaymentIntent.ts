@@ -6,6 +6,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABCreateStripePaymentIntentData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Order id
      */
     order_id: string;

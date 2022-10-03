@@ -7,6 +7,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABEditProductData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Table name
      */
     product_id: string;

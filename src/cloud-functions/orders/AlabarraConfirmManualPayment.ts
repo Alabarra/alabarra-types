@@ -7,6 +7,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABConfirmManualPaymentData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Ref to the order
      */
     order_id: string;

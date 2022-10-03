@@ -6,6 +6,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
  export interface ABCreateCategoryData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Category name
      */
     category_name: string;

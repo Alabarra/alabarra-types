@@ -25,6 +25,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
 export interface ABCreateOrderData {
 
     /**
+     * Business id
+     */
+     business_id: string;
+
+    /**
      * Ref to the customer
      */
      customer_id: string;
