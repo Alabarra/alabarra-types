@@ -12,7 +12,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
     /**
      * Options for the given product
      */
-    options: ABProductOptionSelections[];
+    selected_options: ABProductOptionSelections[];
 
     /**
      * number of products

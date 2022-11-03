@@ -1,3 +1,4 @@
+import { ABProductOptionSelections } from "./ABProduct";
 
 /**
  * Represents a line in an order
@@ -18,6 +19,12 @@ export interface ABOrderLineItem {
      * Ref to the product
      */
     product_id: string;
+
+    /**
+     * Selected options
+     */
+
+    selected_options?: ABProductOptionSelections[];
 
     /**
      * Number of products in the given line
