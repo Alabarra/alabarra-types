@@ -1,3 +1,4 @@
+import { ABProductOptionSelections } from '../../types/ABProduct';
 import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
 /**
  * Represents a cart line
@@ -7,6 +8,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
      * Ref to the product
      */
     product_id: string;
+
+    /**
+     * Options for the given product
+     */
+    options: ABProductOptionSelections[];
 
     /**
      * number of products

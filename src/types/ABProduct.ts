@@ -48,6 +48,8 @@ export interface ABProductOptionsPossibleValues {
     price_adjustment: number;
 }
 
+export type ABProductOptionSelections = ABProductOptionMultipleSelectionSelectedValues | ABProductOptionSingleSelectionSelectedValue;
+
 export type ABProductOptionMultipleSelectionSelectedValues = boolean[];
 export type ABProductOptionSingleSelectionSelectedValue = string;
 

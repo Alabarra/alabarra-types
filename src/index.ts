@@ -13,6 +13,7 @@ export * from "./types/ABTable";
 export * from "./types/AlabarraPayment";
 export * from "./cloud-functions/ABResponse";
 
+
 /* 
     --------------------------
     CLOUD FUNCTIONS INTERFACES
@@ -36,6 +37,7 @@ export * from "./cloud-functions/menu/AlabarraEditProduct";
 
 export * from "./cloud-functions/tables/ABCreateTable";
 
+
 /* 
     --------------------------
     CONVERTERS
@@ -45,6 +47,15 @@ export * from "./converters/AlabarraProductConverter"
 export * from "./converters/AlabarraCategoryConverter"
 export * from "./converters/AlabarraOrderConverter"
 export * from "./converters/ABTableConverter"
+
+
+/* 
+    --------------------------
+    Functions
+    --------------------------
+*/
+export * from "./functions/ABFunctionCalculatePrice";
+
 
 /* 
     --------------------------
