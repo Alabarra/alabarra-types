@@ -11,6 +11,9 @@ export * from "./types/AlabarraCustomer";
 export * from "./types/AlabarraManualPayment";
 export * from "./types/ABTable";
 export * from "./types/AlabarraPayment";
+
+export * from "./types/ABBusinessConfig";
+
 export * from "./cloud-functions/ABResponse";
 
 
