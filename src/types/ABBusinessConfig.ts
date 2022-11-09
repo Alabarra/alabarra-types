@@ -11,7 +11,7 @@ export enum ABBusinessConfigCurrency {
 
 export interface ABBusinessConfig {
     business_name: string;
-    base_country: ABBusinessConfigCountry;
+    country: ABBusinessConfigCountry;
     main_language: string;
     currency: ABBusinessConfigCurrency;
     primary_color: string;
