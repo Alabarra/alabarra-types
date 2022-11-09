@@ -50,6 +50,7 @@ export * from "./converters/AlabarraProductConverter"
 export * from "./converters/AlabarraCategoryConverter"
 export * from "./converters/AlabarraOrderConverter"
 export * from "./converters/ABTableConverter"
+export * from "./converters/ABBusinessConfigConverter"
 
 
 /* 
