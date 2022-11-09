@@ -6,7 +6,9 @@ export enum ABBusinessConfigCountry {
 
 export enum ABBusinessConfigCurrency {
     EUR = "EUR",
-    CLP = "CLP"
+    CLP = "CLP",
+    USD = "USD",
+    GBP = "GBP"
 }
 
 export interface ABBusinessConfig {
