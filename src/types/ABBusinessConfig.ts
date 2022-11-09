@@ -10,10 +10,10 @@ enum ABBusinessConfigCurrency {
 }
 
 export interface ABBusinessConfig {
-    business_name: String;
+    business_name: string;
     base_country: ABBusinessConfigBaseCountry;
-    main_language: String;
+    main_language: string;
     currency: ABBusinessConfigCurrency;
-    primary_color: String;
-    logo_url: String;
+    primary_color: string;
+    logo_url: string;
 }
