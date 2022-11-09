@@ -19,6 +19,7 @@ export interface ABBusinessConfig {
     currency: ABBusinessConfigCurrency;
     primary_color: string;
     logo_url: string;
+    colors: any;
 }
 
 
@@ -29,4 +30,5 @@ export interface ABBusinessConfigData {
     currency: ABBusinessConfigCurrency;
     primary_color: string;
     logo_url: string;
+    colors: any;
 }
