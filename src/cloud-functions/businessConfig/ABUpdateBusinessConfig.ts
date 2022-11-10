@@ -1,4 +1,4 @@
-import { ABBusinessConfigCountry, ABBusinessConfigCurrency } from "../../types/ABBusinessConfig";
+import { ABBusinessConfigCountry, ABBusinessConfigCurrency, ABPalette } from "../../types/ABBusinessConfig";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
@@ -16,13 +16,13 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      main_language?: string;
      currency?: ABBusinessConfigCurrency;
      logo_url?: string;
-     palette?: any;
+     palette?: ABPalette;
 }
 
 /**
  * Represents the result of a call to the update config API
  */
- export type ABUpdateBusinessConfigResponse = ABUpdateBusinessConfigResponseSuccess | ABResponseError;
+export type ABUpdateBusinessConfigResponse = ABUpdateBusinessConfigResponseSuccess | ABResponseError;
 
 
 export interface ABUpdateBusinessConfigResponseSuccess extends ABResponseSuccessAbstract {

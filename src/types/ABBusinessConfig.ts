@@ -1,5 +1,4 @@
 
-import { PaletteOptions } from "@mui/material/styles";
 
 export enum ABBusinessConfigCountry {
     DE = "DE",
@@ -20,7 +19,7 @@ export interface ABBusinessConfig {
     main_language: string;
     currency: ABBusinessConfigCurrency;
     logo_url: string;
-    palette?: PaletteOptions;
+    palette?: ABPaletteOptions;
 }
 
 
@@ -30,5 +29,22 @@ export interface ABBusinessConfigData {
     main_language: string;
     currency: ABBusinessConfigCurrency;
     logo_url: string;
-    palette?: PaletteOptions;
+    palette?: ABPaletteOptions;
 }
+
+export type ABPaletteOptions = {
+    light?: string;
+    main: string;
+    dark?: string;
+    contrastText?: string;
+}
+
+export type ABPalette = {
+    primary?: ABPaletteOptions;
+    secondary?: ABPaletteOptions;
+    error?: ABPaletteOptions;
+    warning?: ABPaletteOptions;
+    info?: ABPaletteOptions;
+    success?: ABPaletteOptions;
+}
+

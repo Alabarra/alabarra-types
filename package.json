@@ -22,7 +22,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@mui/material": "^5.10.13",
     "ajv-formats": "^2.1.1",
     "esbuild": "^0.15.5",
     "ts-json-schema-generator": "^1.0.0"
