@@ -25,6 +25,8 @@ export * from "./cloud-functions/ABResponse";
 
 export * from "./cloud-functions/ABStripeMetadata";
 
+export * from "./cloud-functions/businessConfig/ABUpdateBusinessConfig";
+
 export * from "./cloud-functions/orders/AlabarraCreateOrder";
 export * from "./cloud-functions/orders/AlabarraStartProcessingOrder";
 export * from "./cloud-functions/orders/AlabarraSetOrderReadyForDelivery";
