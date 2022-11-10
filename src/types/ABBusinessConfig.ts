@@ -19,7 +19,7 @@ export interface ABBusinessConfig {
     main_language: string;
     currency: ABBusinessConfigCurrency;
     logo_url: string;
-    palette?: ABPaletteOptions;
+    palette?: ABPalette;
 }
 
 
@@ -29,7 +29,7 @@ export interface ABBusinessConfigData {
     main_language: string;
     currency: ABBusinessConfigCurrency;
     logo_url: string;
-    palette?: ABPaletteOptions;
+    palette?: ABPalette;
 }
 
 export type ABPaletteOptions = {
