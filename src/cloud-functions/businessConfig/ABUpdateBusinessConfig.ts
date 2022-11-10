@@ -30,8 +30,8 @@ export interface ABUpdateBusinessConfigResponseSuccess extends ABResponseSuccess
 
     result: {
         /**
-         * The ID of the business
-         */
-         business_id: string
+        * The ID of the business
+        */
+        business_id: string
     }
 }
