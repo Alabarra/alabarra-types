@@ -1,4 +1,6 @@
 
+import { PaletteOptions } from "@mui/material/styles";
+
 export enum ABBusinessConfigCountry {
     DE = "DE",
     CL = "CL"
@@ -17,9 +19,8 @@ export interface ABBusinessConfig {
     country: ABBusinessConfigCountry;
     main_language: string;
     currency: ABBusinessConfigCurrency;
-    primary_color: string;
     logo_url: string;
-    colors: any;
+    palette?: PaletteOptions;
 }
 
 
@@ -28,7 +29,6 @@ export interface ABBusinessConfigData {
     country: ABBusinessConfigCountry;
     main_language: string;
     currency: ABBusinessConfigCurrency;
-    primary_color: string;
     logo_url: string;
-    colors: any;
+    palette?: PaletteOptions;
 }
