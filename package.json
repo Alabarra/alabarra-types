@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "firebase": "^9.8.2",
-    "@mui/material": "^5.10.13",
     "tslib": "^2.4.0"
   },
   "scripts": {

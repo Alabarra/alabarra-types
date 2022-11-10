@@ -1,6 +1,5 @@
 import { ABBusinessConfigCountry, ABBusinessConfigCurrency } from "../../types/ABBusinessConfig";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
-import { PaletteOptions } from "@mui/material/styles";
 
 /**
  * API to create a new table
@@ -17,7 +16,7 @@ import { PaletteOptions } from "@mui/material/styles";
      main_language?: string;
      currency?: ABBusinessConfigCurrency;
      logo_url?: string;
-     palette?: PaletteOptions;
+     palette?: any;
 }
 
 /**
