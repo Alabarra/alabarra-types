@@ -22,7 +22,6 @@ export interface ABBusinessConfig {
     palette?: ABPalette;
 }
 
-
 export interface ABBusinessConfigData {
     business_name: string;
     country: ABBusinessConfigCountry;
