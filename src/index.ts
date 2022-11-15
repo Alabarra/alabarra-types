@@ -54,6 +54,8 @@ export * from "./converters/AlabarraCategoryConverter"
 export * from "./converters/AlabarraOrderConverter"
 export * from "./converters/ABTableConverter"
 export * from "./converters/ABBusinessConfigConverter"
+export * from "./converters/ABAdminConverter"
+export * from "./converters/ABClientConverter"
 
 
 /* 

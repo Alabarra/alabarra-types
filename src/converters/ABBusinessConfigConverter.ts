@@ -1,5 +1,4 @@
-import { ABProduct, ABProductData } from "../types/ABProduct";
-import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, serverTimestamp, SnapshotOptions, Timestamp, WithFieldValue } from 'firebase/firestore';
+import { DocumentData, FirestoreDataConverter, QueryDocumentSnapshot, SnapshotOptions, WithFieldValue } from 'firebase/firestore';
 import { ABBusinessConfig, ABBusinessConfigData } from "../types/ABBusinessConfig";
 
 
