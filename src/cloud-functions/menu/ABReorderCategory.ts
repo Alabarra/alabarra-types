@@ -13,12 +13,12 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      *  Index of the category that needs to be moved
      */
-    old_index: string;
+    old_index: number;
 
     /**
      *  Destination index of the category to move
      */
-    new_index: string;
+    new_index: number;
 }
 
 /**
