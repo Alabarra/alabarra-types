@@ -38,6 +38,7 @@ export * from "./cloud-functions/orders/AlabarraConfirmManualPayment";
 export * from "./cloud-functions/payments/AlabarraCreateStripePaymentIntent";
 
 export * from "./cloud-functions/menu/AlabarraCreateCategory";
+export * from "./cloud-functions/menu/ABReorderCategory";
 export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
