@@ -55,5 +55,10 @@ import { DocumentReference } from "firebase/firestore";
     /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     last_updated_at: Date | null;
+   last_updated_at: Date | null;
+
+   /**
+    * Position of the category
+    */
+   rank: number;
 }
