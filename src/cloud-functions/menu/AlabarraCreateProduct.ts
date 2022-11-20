@@ -9,7 +9,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      * Business id
      */
-     business_id: string;
+    business_id: string;
 
     /**
      *  Visible name of the product
@@ -40,7 +40,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      *  Options of the product, if any
      */
-    options?: ABProductOption[];
+    options: ABProductOption[];
 
     /**
      *  Unit price

@@ -35,8 +35,13 @@ export enum ABProductOptionsType {
 /**
  * Generic container for product options
  */
-export interface ABProductOptionsPossibleValues {
+export interface ABProductOptionsPossibleValue {
 
+    /**
+     * id of the selection
+     */
+    id: string;
+    
     /**
      * Customer-facing name of the possible value
      */
@@ -48,25 +53,25 @@ export interface ABProductOptionsPossibleValues {
     price_adjustment: number;
 }
 
-export type ABProductOptionSelections = ABProductOptionMultipleSelectionSelectedValues | ABProductOptionSingleSelectionSelectedValue;
+export type ABProductOptionSelections = ABProductOptionMultipleSelectedValues | ABProductOptionSingleSelectedValue;
 
-export type ABProductOptionMultipleSelectionSelectedValues = boolean[];
-export type ABProductOptionSingleSelectionSelectedValue = string;
+export type ABProductOptionMultipleSelectedValues = string[];
+export type ABProductOptionSingleSelectedValue = string;
 
 export interface ABProductOptionMultipleSelection extends ABProductOption {
 
     /**
      * Which possible values are checked
      */
-    default_values: ABProductOptionMultipleSelectionSelectedValues;
+    default_values: ABProductOptionMultipleSelectedValues;
 
     /**
-     * Maximum number of selections. if undefined, unlimited selection is possible
+     * Maximum number of selections
      */
-    max_selection?: number;
+    max_selection: number;
 
     /**
-     * Minimum number of selections. Cannot be greater than max_selection
+     * Minimum number of selections. Cannot be greater than max_selection.
      */
     min_selection: number;
 }
@@ -76,7 +81,7 @@ export interface ABProductOptionSingleSelection extends ABProductOption {
     /**
      * Title of the default value
      */
-     default_value: ABProductOptionSingleSelectionSelectedValue;
+     default_value: ABProductOptionSingleSelectedValue;
 }
 
 /**
@@ -97,7 +102,7 @@ export interface ABProductOptionSingleSelection extends ABProductOption {
     /**
      * Array of the possible values this option can take
      */
-    possible_values: ABProductOptionsPossibleValues[];
+    possible_values: ABProductOptionsPossibleValue[];
 }
 
 
@@ -175,5 +180,5 @@ export interface ABProductOptionSingleSelection extends ABProductOption {
     /**
      * Possible options to configure the product
      */
-    options?: ABProductOption[];
+    options: ABProductOption[];
 }

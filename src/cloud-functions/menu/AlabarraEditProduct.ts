@@ -9,7 +9,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      * Business id
      */
-     business_id: string;
+    business_id: string;
 
     /**
      * Table name
@@ -19,43 +19,43 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      *  Visible name of the product
      */
-     title?: string;
+    title?: string;
 
-     /**
-      *  Reference to the category where the product lives
-      */
-     category?: string;
+    /**
+     *  Reference to the category where the product lives
+     */
+    category?: string;
  
-     // This data will be generated server-side
-     //created_at: Date;
- 
-     /**
-      *  Description of the product
-      */
-     description?: string;
+    // This data will be generated server-side
+    //created_at: Date;
+
+    /**
+     *  Description of the product
+     */
+    description?: string;
  
     /**
      *  Path to the image in the default bucket
      */
-     image_temp_path?: string;
+    image_temp_path?: string;
  
      //will be updated server-side
      //last_updated_at: Date | null;
  
-     /**
-      *  Options of the product, if any
-      */
-     options?: ABProductOption[];
+    /**
+     *  Options of the product, if any
+     */
+    options?: ABProductOption[];
  
-     /**
-      *  Unit price
-      */
-     price?: number;
+    /**
+     *  Unit price
+     */
+    price?: number;
  
-     /**
-      *  Status of the product. If none is given, active will be chosen
-      */
-     status?: ABProductStatus;
+    /**
+     *  Status of the product. If none is given, active will be chosen
+     */
+    status?: ABProductStatus;
 }
 
 /**
