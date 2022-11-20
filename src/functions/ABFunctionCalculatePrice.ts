@@ -19,7 +19,7 @@ export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, sel
                 console.log("option casted to single option", singleSelectedOption);
 
                 // Increase the price for the given selected value
-                const selectedPossibleValue = productOption.possible_values.find(obj => obj.id === singleSelectedOption.option_id);
+                const selectedPossibleValue = productOption.possible_values.find(obj => obj.id === singleSelectedOption.selected_value);
                 console.log("respective possible value: ", selectedPossibleValue);
                 if (selectedPossibleValue) {
                     unitPrice += selectedPossibleValue.price_adjustment;
