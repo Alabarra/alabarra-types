@@ -1,4 +1,4 @@
-import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
+import { ABProductOption, ABProductOptionMultipleSelection, ABProductOptionSingleSelection, ABProductStatus } from "../../types/ABProduct";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
