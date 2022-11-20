@@ -1,37 +1,36 @@
-import { ABProductOption, ABProductOptionMultipleSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectedValue, ABProductOptionsType } from "../types/ABProduct";
+import { ABProduct, ABProductOption, ABProductOptionMultipleSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectedValue, ABProductOptionsType } from "../types/ABProduct";
 
-export const ABFunctionCalculatePrice = (basePrice: number, selectedOptions: ABProductOptionSelections[], availableProductOptions: ABProductOption[]) => {
+export const ABFunctionCalculatePrice = (product: ABProduct, selectedOptions: ABProductOptionSelections[]) => {
     
-    let unitPrice = basePrice;
+    let unitPrice = product.price;
 
     // Go trough every selected option
-    selectedOptions.forEach((selectedOption, index) => {
+    selectedOptions.forEach((_, index) => {
 
         // Original product option
-        if (availableProductOptions) {
-            const productOption = availableProductOptions[index];
+        const productOption = product.options[index];
 
-            if (productOption.type == ABProductOptionsType.SINGLE_SELECTION) {
-                //Get selected option
-                const singleSelectedOption = selectedOptions[index] as ABProductOptionSingleSelectedValue;
-
-                if (singleSelectedOption) {
-                    // Find product option that is selected to find price adjustment value
-                    const originOption = productOption.possible_values.find(possible_value => possible_value.title == singleSelectedOption);
-                    unitPrice += originOption?.price_adjustment ?? 0;
-                }
-            } else if (productOption.type == ABProductOptionsType.MULTIPLE_SELECTION) {
-                
-                //Get selected option
-                const selectedValues = selectedOptions[index] as ABProductOptionMultipleSelectedValues;
-                if (selectedValues) {
-                    selectedValues.forEach((selectedValue, index) => {
-                        if (selectedValue) {
-                            unitPrice += productOption.possible_values[index].price_adjustment;
-                        }
-                    });
-                }
+        if (productOption.type == ABProductOptionsType.SINGLE_SELECTION) {
+            //Get selected option
+            const singleSelectedValue = selectedOptions[index] as ABProductOptionSingleSelectedValue;
+            
+            // Find product option that is selected to find price adjustment value
+            const selectedOption = productOption.possible_values.find((prod) => prod.id === singleSelectedValue);
+            if (selectedOption) {
+                unitPrice += selectedOption.price_adjustment;
             }
+        } else if (productOption.type == ABProductOptionsType.MULTIPLE_SELECTION) {
+            
+            //Get selected option
+            const selectedValues = selectedOptions[index] as ABProductOptionMultipleSelectedValues;
+
+            selectedValues.forEach((selectedValue) => {
+                // Find product option that is selected to find price adjustment value
+                const selectedOption = productOption.possible_values.find((prod) => prod.id === selectedValue);
+                if (selectedOption) {
+                    unitPrice += selectedOption.price_adjustment;
+                }
+            });
         }
     });
 
