@@ -1,4 +1,3 @@
-import { DocumentReference } from "firebase/firestore";
 
 /**
  * Status of each product
