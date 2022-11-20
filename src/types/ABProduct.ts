@@ -61,7 +61,7 @@ export type ABProductOptionMultipleSelectedValues = {
 
 export type ABProductOptionSingleSelectedValue = {
     option_id: string;
-    selected_values: string[]
+    selected_value: string
 }
 
 export type ABProductOption = ABProductOptionSingleSelection | ABProductOptionMultipleSelection;
