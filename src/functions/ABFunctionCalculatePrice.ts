@@ -1,4 +1,4 @@
-import { ABProductOption, ABProductOptionMultipleSelectionSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectionSelectedValue, ABProductOptionsType } from "../types/ABProduct";
+import { ABProductOption, ABProductOptionMultipleSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectedValue, ABProductOptionsType } from "../types/ABProduct";
 
 export const ABFunctionCalculatePrice = (basePrice: number, selectedOptions: ABProductOptionSelections[], availableProductOptions: ABProductOption[]) => {
     
@@ -13,7 +13,7 @@ export const ABFunctionCalculatePrice = (basePrice: number, selectedOptions: ABP
 
             if (productOption.type == ABProductOptionsType.SINGLE_SELECTION) {
                 //Get selected option
-                const singleSelectedOption = selectedOptions[index] as ABProductOptionSingleSelectionSelectedValue;
+                const singleSelectedOption = selectedOptions[index] as ABProductOptionSingleSelectedValue;
 
                 if (singleSelectedOption) {
                     // Find product option that is selected to find price adjustment value
@@ -23,7 +23,7 @@ export const ABFunctionCalculatePrice = (basePrice: number, selectedOptions: ABP
             } else if (productOption.type == ABProductOptionsType.MULTIPLE_SELECTION) {
                 
                 //Get selected option
-                const selectedValues = selectedOptions[index] as ABProductOptionMultipleSelectionSelectedValues;
+                const selectedValues = selectedOptions[index] as ABProductOptionMultipleSelectedValues;
                 if (selectedValues) {
                     selectedValues.forEach((selectedValue, index) => {
                         if (selectedValue) {
