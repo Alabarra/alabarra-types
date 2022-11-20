@@ -55,8 +55,15 @@ export interface ABProductOptionsPossibleValue {
 
 export type ABProductOptionSelections = ABProductOptionMultipleSelectedValues | ABProductOptionSingleSelectedValue;
 
-export type ABProductOptionMultipleSelectedValues = string[];
-export type ABProductOptionSingleSelectedValue = string;
+export type ABProductOptionMultipleSelectedValues = {
+    option_id: string;
+    selected_values: string[]
+};
+
+export type ABProductOptionSingleSelectedValue = {
+    option_id: string;
+    selected_values: string[]
+}
 
 export type ABProductOption = ABProductOptionSingleSelection | ABProductOptionMultipleSelection;
 
@@ -65,7 +72,7 @@ export interface ABProductOptionMultipleSelection extends ABProductOptionAbstrac
     /**
      * Which possible values are checked
      */
-    default_values: ABProductOptionMultipleSelectedValues;
+    default_values: string[];
 
     /**
      * Maximum number of selections
@@ -83,7 +90,7 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
     /**
      * Title of the default value
      */
-     default_value: ABProductOptionSingleSelectedValue;
+     default_value: string;
 }
 
 /**
