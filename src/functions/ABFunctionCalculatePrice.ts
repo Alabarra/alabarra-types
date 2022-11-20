@@ -23,7 +23,7 @@ export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, sel
             
             //Get selected option
             const selectedValues = selectedOptions[index] as ABProductOptionMultipleSelectedValues;
-            
+
             selectedValues.selected_values.forEach((selectedValue) => {
                 // Find product option that is selected to find price adjustment value
                 const selectedOption = productOption.possible_values.find((prod) => prod.id === selectedValue);
@@ -36,3 +36,4 @@ export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, sel
 
     return unitPrice;
 }
+
