@@ -1,6 +1,6 @@
-import { ABProduct, ABProductOption, ABProductOptionMultipleSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectedValue, ABProductOptionsType } from "../types/ABProduct";
+import { ABProduct, ABProductData, ABProductOptionMultipleSelectedValues, ABProductOptionSelections, ABProductOptionSingleSelectedValue, ABProductOptionsType } from "../types/ABProduct";
 
-export const ABFunctionCalculatePrice = (product: ABProduct, selectedOptions: ABProductOptionSelections[]) => {
+export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, selectedOptions: ABProductOptionSelections[]) => {
     
     let unitPrice = product.price;
 
