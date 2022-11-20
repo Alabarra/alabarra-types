@@ -56,7 +56,7 @@ export interface ABProductOptionsPossibleValue {
 export type ABProductOptionSelections = ABProductOptionMultipleSelectedValues | ABProductOptionSingleSelectedValue;
 
 export type ABProductOptionMultipleSelectedValues = string[];
-export type ABProductOptionSingleSelectedValue = string;
+export type ABProductOptionSingleSelectedValue = string | null;
 
 export interface ABProductOptionMultipleSelection extends ABProductOption {
 
