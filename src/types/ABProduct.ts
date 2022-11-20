@@ -56,11 +56,11 @@ export interface ABProductOptionsPossibleValue {
 export type ABProductOptionSelections = ABProductOptionMultipleSelectedValues | ABProductOptionSingleSelectedValue;
 
 export type ABProductOptionMultipleSelectedValues = string[];
-export type ABProductOptionSingleSelectedValue = string | null;
+export type ABProductOptionSingleSelectedValue = string;
 
 export type ABProductOption = ABProductOptionSingleSelection | ABProductOptionMultipleSelection;
 
-export interface ABProductOptionMultipleSelection extends ABProductOptionBase {
+export interface ABProductOptionMultipleSelection extends ABProductOptionAbstract {
 
     /**
      * Which possible values are checked
@@ -78,7 +78,7 @@ export interface ABProductOptionMultipleSelection extends ABProductOptionBase {
     min_selection: number;
 }
 
-export interface ABProductOptionSingleSelection extends ABProductOptionBase {
+export interface ABProductOptionSingleSelection extends ABProductOptionAbstract {
 
     /**
      * Title of the default value
@@ -89,7 +89,7 @@ export interface ABProductOptionSingleSelection extends ABProductOptionBase {
 /**
  * Represents something that can be configured for the product
  */
- export interface ABProductOptionBase {
+ export interface ABProductOptionAbstract {
 
     /**
      * Customer-facing title of the option
