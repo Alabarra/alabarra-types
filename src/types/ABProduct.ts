@@ -92,6 +92,11 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
  export interface ABProductOptionAbstract {
 
     /**
+     * id of the given option
+     */
+    id: string;
+
+    /**
      * Customer-facing title of the option
      */
     title: string;
