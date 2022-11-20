@@ -8,26 +8,32 @@ export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, sel
     selectedOptions.forEach((selectedOption, index) => {
 
         const optionId = selectedOption.option_id;
-
+        console.log("calculating price for " + optionId);
         const productOption = product.options.find((obj) => obj.id === optionId);
-
+        console.log("matched to productOption ", productOption);
+    
         if (productOption) {
             if (productOption.type === ABProductOptionsType.SINGLE_SELECTION) {
                 // Cast selection appropiately
                 const singleSelectedOption = selectedOption as ABProductOptionSingleSelectedValue;
+                console.log("option casted to single option", singleSelectedOption);
+
+                // Increase the price for the given selected value
                 const selectedPossibleValue = productOption.possible_values.find(obj => obj.id === singleSelectedOption.option_id);
+                console.log("respective possible value: ", selectedPossibleValue);
                 if (selectedPossibleValue) {
                     unitPrice += selectedPossibleValue.price_adjustment;
                 }
             } else if (productOption.type === ABProductOptionsType.MULTIPLE_SELECTION) {
                 // Cast selection appropiately
                 const multipleSelectedOption = selectedOption as ABProductOptionMultipleSelectedValues;
-                //const selectedPossibleValues = productOption.possible_values.find(obj => obj.id === multipleSelectedOption.option_id);
-
+                console.log("option casted to multiple option", multipleSelectedOption);
 
                 // Increase the price for every selected option
                 multipleSelectedOption.selected_values.forEach(selectedValueId => {
+                    console.log("trying to match selected value id", selectedValueId);
                     const selectedPossibleValue = productOption.possible_values.find(obj => obj.id === selectedValueId);
+                    console.log("selectedPossibleValue found", selectedPossibleValue);
                     if (selectedPossibleValue) {
                         unitPrice += selectedPossibleValue.price_adjustment;
                     }
@@ -38,4 +44,3 @@ export const ABFunctionCalculatePrice = (product: ABProduct | ABProductData, sel
 
     return unitPrice;
 }
-
