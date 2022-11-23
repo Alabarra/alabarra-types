@@ -16,6 +16,8 @@ export * from "./types/ABClient";
 
 export * from "./types/ABBusinessConfig";
 
+export * from "./types/ABOpeningHours";
+
 export * from "./cloud-functions/ABResponse";
 
 /* 
@@ -65,6 +67,7 @@ export * from "./converters/ABClientConverter"
     --------------------------
 */
 export * from "./functions/ABFunctionCalculatePrice";
+export * from "./functions/ABFunctionDateWithinOpeningHours";
 
 
 /* 
