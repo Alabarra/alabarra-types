@@ -1,3 +1,4 @@
+import { ABWeekOpeningHours } from "./ABOpeningHours";
 
 
 export enum ABBusinessConfigCountry {
@@ -12,14 +13,8 @@ export enum ABBusinessConfigCurrency {
     GBP = "GBP"
 }
 
-export interface ABBusinessConfig {
+export interface ABBusinessConfig extends ABBusinessConfigData {
     id: string;
-    business_name: string;
-    country: ABBusinessConfigCountry;
-    main_language: string;
-    currency: ABBusinessConfigCurrency;
-    logo_url: string;
-    palette?: ABPalette;
 }
 
 export interface ABBusinessConfigData {
@@ -29,6 +24,7 @@ export interface ABBusinessConfigData {
     currency: ABBusinessConfigCurrency;
     logo_url: string;
     palette?: ABPalette;
+    week_opening_hours: ABWeekOpeningHours;
 }
 
 export type ABPaletteOptions = {
