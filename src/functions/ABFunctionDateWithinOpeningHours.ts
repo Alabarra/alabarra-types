@@ -2,8 +2,8 @@ import { ABOpeningHours, ABWeekOpeningHours } from "../types/ABOpeningHours";
 
 export const ABFunctionDateWithinOpeningHours = (date: Date, openingHours: ABWeekOpeningHours): boolean => {
 
-    const currentMinute = date.getUTCHours() * 60 + date.getUTCMinutes();
-    const currentDay = date.getUTCDay();
+    const currentMinute = date.getHours() * 60 + date.getMinutes();
+    const currentDay = date.getDay();
 
     let todayHours: ABOpeningHours[];
 
