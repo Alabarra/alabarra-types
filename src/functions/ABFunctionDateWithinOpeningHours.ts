@@ -27,10 +27,11 @@ export const ABFunctionDateWithinOpeningHours = (date: Date, openingHours: ABWee
             todayHours = openingHours.friday;
             break;
         case 6:
-        default:
-            console.log("Error. Weekday not found.");
             todayHours = openingHours.saturday;
             break;
+        default:
+            console.log("Error. Weekday not found.");
+            return false;
     }
 
     const found = todayHours.find(hourRange => currentMinute >= hourRange.opening && currentMinute < hourRange.closing);
