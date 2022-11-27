@@ -25,6 +25,13 @@ export interface ABBusinessConfigData {
     logo_url: string;
     palette?: ABPalette;
     week_opening_hours: ABWeekOpeningHours;
+    tip_options: ABTipOption[];
+}
+
+export type ABTipOption = {
+    id: string;
+    default: boolean;
+    percentage: number;
 }
 
 export type ABPaletteOptions = {

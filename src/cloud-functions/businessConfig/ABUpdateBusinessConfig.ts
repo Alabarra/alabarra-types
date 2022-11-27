@@ -1,4 +1,4 @@
-import { ABBusinessConfigCountry, ABBusinessConfigCurrency, ABPalette } from "../../types/ABBusinessConfig";
+import { ABBusinessConfigCountry, ABBusinessConfigCurrency, ABPalette, ABTipOption } from "../../types/ABBusinessConfig";
 import { ABWeekOpeningHours } from "../../types/ABOpeningHours";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
@@ -19,6 +19,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      logo_url?: string;
      palette?: ABPalette;
      week_opening_hours?: ABWeekOpeningHours;
+     tip_options?: ABTipOption[];
 }
 
 /**
