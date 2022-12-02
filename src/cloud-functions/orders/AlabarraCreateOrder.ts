@@ -59,6 +59,11 @@ export interface ABCreateOrderData {
      * Name of the table where the product should be delivered
      */
     table_name: string;
+
+    /**
+     * Total amount of tip given for the order
+     */
+    tip: number;
 }
 
 
