@@ -68,6 +68,7 @@ export * from "./converters/ABClientConverter"
     --------------------------
 */
 export * from "./functions/ABFunctionCalculatePrice";
+export * from "./functions/ABFunctionCalculateTip";
 export * from "./functions/ABFunctionDateWithinOpeningHours";
 
 
