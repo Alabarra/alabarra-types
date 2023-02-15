@@ -176,6 +176,11 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
     category: string | null;
 
     /**
+     * Optional food tags
+     */
+    tags: ABProductTag[];
+
+    /**
      * Url to the hero image of thep roduct
      */
     image_url: string;
@@ -194,4 +199,14 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
      * Possible options to configure the product
      */
     options: ABProductOption[];
+}
+
+export enum ABProductTag {
+
+    VEGETARIAN = "VEGETARIAN",
+    VEGAN = "VEGAN",
+    NO_ADDED_SUGAR = "NO_ADDED_SUGAR",
+    GLUTEN_FREE = "GLUTEN_FREE",
+    NUT_FREE = "NUT_FREE"
+
 }
