@@ -207,6 +207,6 @@ export enum ABProductTag {
     VEGAN = "VEGAN",
     NO_ADDED_SUGAR = "NO_ADDED_SUGAR",
     GLUTEN_FREE = "GLUTEN_FREE",
-    NUT_FREE = "NUT_FREE"
+    NO_GMO = "NO_GMO"
 
 }
