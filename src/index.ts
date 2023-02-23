@@ -12,6 +12,7 @@ export * from "./types/AlabarraManualPayment";
 export * from "./types/ABTable";
 export * from "./types/AlabarraPayment";
 export * from "./types/ABAdmin";
+export * from "./types/ABEmployee";
 export * from "./types/ABClient";
 
 export * from "./types/ABBusinessConfig";
@@ -59,6 +60,7 @@ export * from "./converters/AlabarraOrderConverter"
 export * from "./converters/ABTableConverter"
 export * from "./converters/ABBusinessConfigConverter"
 export * from "./converters/ABAdminConverter"
+export * from "./converters/ABEmployeeConverter"
 export * from "./converters/ABClientConverter"
 
 
