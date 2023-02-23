@@ -9,7 +9,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      * Business id
      */
-     business_id: string;
+    business_id: string;
 
     /**
      * Ref to the order
@@ -27,9 +27,9 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     payment_note?: string;
 
     /**
-     * Type of manual payment
+     * Method of manual payment
      */
-    payment_type: ABPaymentMethod;
+    payment_method: ABPaymentMethod;
 
     /**
      * Amount paid
