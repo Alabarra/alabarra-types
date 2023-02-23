@@ -1,4 +1,4 @@
-import { ABPaymentType } from "../../types/AlabarraPayment";
+import { ABPaymentMethod } from "../../types/AlabarraPayment";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
@@ -29,7 +29,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      * Type of manual payment
      */
-    payment_type: ABPaymentType;
+    payment_type: ABPaymentMethod;
 
     /**
      * Amount paid

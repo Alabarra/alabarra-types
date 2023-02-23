@@ -1,9 +1,21 @@
 
 
+export enum ABPaymentType {
+    /**
+     * Represents an incoming payment.
+     */
+    PAYMENT = 'PAYMENT',
+
+    /**
+     * Represents an outgoing payment.
+     */
+    REFUND = 'REFUND'
+}
+
 /**
  * Type of payment
  */
-export enum ABPaymentType {
+export enum ABPaymentMethod {
     /**
      * Paid presentially via cash
      */
@@ -15,20 +27,25 @@ export enum ABPaymentType {
     /**
      * Paid digitally via stripe
      */
-    DIGITAL_STRIPE = 'DIGITAL_STRIPE'
+    EU_DIGITAL_STRIPE = 'EU_DIGITAL_STRIPE',
+
+    /**
+     * Paid digitally via MercadoPago
+     */
+    CL_MERCADOPAGO = 'CL_MERCADOPAGO'
 }
 
 
 export interface ABPaymentDataStripe extends ABPaymentData {
 
-    payment_type: ABPaymentType.DIGITAL_STRIPE;
+    payment_method: ABPaymentMethod.EU_DIGITAL_STRIPE;
 
     stripe_payment_id: string;
 }
 
 export interface ABPaymentDataPresentialCard extends ABPaymentData {
 
-    payment_type: ABPaymentType.PRESENTIAL_CARD;
+    payment_method: ABPaymentMethod.PRESENTIAL_CARD;
 
     card_voucher_id: string;
 }
@@ -87,6 +104,11 @@ export interface ABPaymentData {
     payment_type: ABPaymentType;
 
     /**
+     * Method of payment
+     */
+    payment_method: ABPaymentMethod;
+
+    /**
      * Current status of the payment
      */
     payment_status: ABPaymentStatus;
@@ -95,6 +117,7 @@ export interface ABPaymentData {
      * Id of the order in question
      */
     order_id: string;
+
 
     /**
      * General note for the complete ticket
