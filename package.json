@@ -1,10 +1,10 @@
 {
-  "name": "@dvalenzuela-com/alabarra-types",
+  "name": "@Alabarra/alabarra-types",
   "version": "1.1.59",
   "description": "",
   "main": "./out/index.js",
   "types": "./out/index.d.ts",
-  "repository": "git://github.com/dvalenzuela-com/alabarra-types.git",
+  "repository": "git://github.com/Alabarra/alabarra-types.git",
   "files": [
     "out"
   ],
