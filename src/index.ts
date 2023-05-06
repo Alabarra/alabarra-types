@@ -46,8 +46,9 @@ export * from "./cloud-functions/menu/ABReorderCategory";
 export * from "./cloud-functions/menu/AlabarraCreateProduct";
 export * from "./cloud-functions/menu/AlabarraEditProduct";
 
-export * from "./cloud-functions/tables/ABCreateTable";
 export * from "./cloud-functions/tables/ABActivateTable";
+export * from "./cloud-functions/tables/ABCreateTable";
+export * from "./cloud-functions/tables/ABDeleteTable";
 
 
 /* 
