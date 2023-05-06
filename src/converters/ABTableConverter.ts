@@ -21,7 +21,6 @@ export const TableConverter: FirestoreDataConverter<ABTable> = {
 	
 		const newTable: ABTable = {
 			id: snapshot.id,
-			path: snapshot.ref.path,
 			...data
 		};
 

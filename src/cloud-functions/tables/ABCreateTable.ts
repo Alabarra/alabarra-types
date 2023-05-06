@@ -8,7 +8,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      * Business id
      */
-     business_id: string;
+    business_id: string;
 
     /**
      * Table name
@@ -28,6 +28,6 @@ export interface ABCreateTableResponseSuccess extends ABResponseSuccessAbstract 
         /**
          * The ID of the created table, which is in turn its visible name
          */
-        table_id: string
+        table_id: string;
     }
 }

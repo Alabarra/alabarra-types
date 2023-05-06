@@ -4,27 +4,17 @@
 export interface ABTable extends ABTableData {
 
     /**
-     * id of the table, which is in turn its name
+     * id of the table
      */
     id: string;
 
     /**
-     * Path of the category
-     */
-    path: string;
-
-    /**
-     * user-facing name of the table. Same as id.
-     */
-    table_name: string;
-
-    /**
-     * Date of product creation in the server
+     * Date of table creation in the server
      */
      created_at: Date;
 
     /**
-     * Date of product creation in the server
+     * Date of table creation in the server
      */
      last_updated_at: Date | null;
  }
@@ -34,24 +24,25 @@ export interface ABTable extends ABTableData {
  * Represents a product that can be ordered
  */
 export interface ABTableData {
-    /**
-     * id of the table, which is in turn its name
-     */
-    id?: string;
     
     /**
-     * user-facing name of the table. Same as id.
+     * user-facing name of the table.
      */
     table_name: string;
 
     /**
-     * Date of product creation in the server
+     * Date of table creation in the server
      */
     created_at: any;
 
     /**
-     * Date of product creation in the server
+     * Date of table creation in the server
      */
      last_updated_at: any;
+
+    /**
+     * Whether the table is active or not
+     */
+    active: boolean;
 }
  
