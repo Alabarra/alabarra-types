@@ -16,9 +16,9 @@ export interface ABUserData {
      */
     orders: ABOrderRef [];
 
-    name: string | null;
+    first_name: string | null;
 
-    forename: string | null;
+    last_name: string | null;
 
     email: string | null;
 }
