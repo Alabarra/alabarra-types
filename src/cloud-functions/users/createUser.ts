@@ -22,6 +22,16 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     user_last_name: string;
 
     /**
+     * user email
+     */
+    user_email: string;
+
+    /**
+     * user password
+     */
+    user_password: string;
+
+    /**
      * user role
      */
     user_role: ABUserRole;
