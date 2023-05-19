@@ -49,6 +49,7 @@ export * from "./cloud-functions/tables/ABActivateTable";
 export * from "./cloud-functions/tables/ABCreateTable";
 export * from "./cloud-functions/tables/ABDeleteTable";
 
+export * from "./cloud-functions/users/createUser";
 
 /* 
     --------------------------
