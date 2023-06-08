@@ -1,64 +1,61 @@
-import { DocumentReference } from "firebase/firestore";
-
-
 /**
  * Represents a product that can be ordered
  */
- export interface ABCategory extends ABCategoryData {
+export interface ABCategory extends ABCategoryData {
 
-    /**
+  /**
     * id of the product
     */
-    id: string;
+  id: string
 
-    /**
+  /**
      * path of the product
      */
-    path: string;
+  path: string
 
-    /**
+  /**
      * Date of product creation in the server
      */
-    created_at: Date;
+  created_at: Date
 
-    /**
+  /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     last_updated_at: Date | null;
+  last_updated_at: Date | null
 }
 
 /**
  * Represents a category that holds products
  */
- export interface ABCategoryData {
+export interface ABCategoryData {
 
-    /**
+  /**
      * Title or name of the category
      */
-    title: string;
+  title: string
 
-    /**
+  /**
      * Date of product creation in the server
      */
-    created_at?: any;
+  created_at?: any
 
-    /**
+  /**
      * Contained products
      */
-    products: string[];
+  products: string[]
 
-    /**
+  /**
      * Short description of the category
      */
-    description: string;
+  description: string
 
-    /**
+  /**
      * Last time the product was modified. Null in case the product was never modified
      */
-   last_updated_at: Date | null;
+  last_updated_at: Date | null
 
-   /**
+  /**
     * Position of the category
     */
-   rank: number;
+  rank: number
 }

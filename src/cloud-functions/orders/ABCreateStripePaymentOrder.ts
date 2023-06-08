@@ -1,5 +1,5 @@
-import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
-import { ABCreateOrderData } from './AlabarraCreateOrder';
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
+import { type ABCreateOrderData } from './AlabarraCreateOrder'
 
 /**
  * API for creating a new order
@@ -9,16 +9,16 @@ export interface ABCreateStripePaymentOrderData extends ABCreateOrderData {}
 /**
  * Represents the result of a call to the Create Order API
  */
-export type ABCreateStripePaymentOrderResponse = ABCreateStripePaymentOrderSuccess | ABResponseError;
+export type ABCreateStripePaymentOrderResponse = ABCreateStripePaymentOrderSuccess | ABResponseError
 
 export interface ABCreateStripePaymentOrderSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the created order
          */
-        order_id: string,
+    order_id: string
 
-        client_secret: string
-    }
+    client_secret: string
+  }
 }

@@ -1,16 +1,15 @@
-const fs = require('fs');
-const path  = require('path');
-const tsj = require("ts-json-schema-generator");
-const Ajv = require("ajv");
-const standaloneCode = require("ajv/dist/standalone");
-const addFormats = require("ajv-formats");
-const esbuild = require("esbuild");
-const spawn = require('child_process').spawn;
+const fs = require('fs')
+const path = require('path')
+const tsj = require('ts-json-schema-generator')
+const Ajv = require('ajv')
+const standaloneCode = require('ajv/dist/standalone')
+const addFormats = require('ajv-formats')
+const esbuild = require('esbuild')
+const spawn = require('child_process').spawn
 
-function clearDir(destDir)
-{
-  fs.rmSync(destDir, { recursive: true, force: true });
-  fs.mkdirSync(destDir, {recursive: true});
+function clearDir (destDir) {
+  fs.rmSync(destDir, { recursive: true, force: true })
+  fs.mkdirSync(destDir, { recursive: true })
 }
 
 /**
@@ -24,132 +23,117 @@ function clearDir(destDir)
  * @param extraEnv Extra variables to pass as Environment variables
  * @return {Promise<string>}
  */
- async function execCommand(command, args, cwd = __dirname, echoOutputs = true, prefixOutputs = "", extraEnv = {})
- {
-   return new Promise((resolve, reject) =>
-   {
-     let allData = "";
-     let errOutput = "";
-     const call = spawn(command, [args], {shell: true, windowsVerbatimArguments: true, cwd: cwd, env: {...process.env, ...extraEnv} });
- 
-     call.stdout.on('data', function (data)
-     {
-       allData += data.toString();
-       echoOutputs && process.stdout.write(prefixOutputs + data.toString());
-     });
-     call.stderr.on('data', function (data)
-     {
-       errOutput = data.toString();
-       echoOutputs && process.stdout.write(prefixOutputs + data.toString());
-     });
-     call.on('exit', function (code)
-     {
-       if (code == 0)
-         resolve(allData);
-       else
-         reject({command, args, stdout: allData, stderr: errOutput});
-     });
-   });
- }
+async function execCommand (command, args, cwd = __dirname, echoOutputs = true, prefixOutputs = '', extraEnv = {}) {
+  return new Promise((resolve, reject) => {
+    let allData = ''
+    let errOutput = ''
+    const call = spawn(command, [args], { shell: true, windowsVerbatimArguments: true, cwd, env: { ...process.env, ...extraEnv } })
 
-function typeScriptToJsonSchema(srcDir, destDir)
-{
+    call.stdout.on('data', function (data) {
+      allData += data.toString()
+      echoOutputs && process.stdout.write(prefixOutputs + data.toString())
+    })
+    call.stderr.on('data', function (data) {
+      errOutput = data.toString()
+      echoOutputs && process.stdout.write(prefixOutputs + data.toString())
+    })
+    call.on('exit', function (code) {
+      if (code === 0) { resolve(allData) } else { reject(new Error({ command, args, stdout: allData, stderr: errOutput })) }
+    })
+  })
+}
+
+function typeScriptToJsonSchema (srcDir, destDir) {
   const config = {
-    path: srcDir+"/**/*.ts",
-    type: "*",
-  };
-
-  let schemas = [];
-  console.time("* TS TO JSONSCHEMA");
-  let schemaRaw = tsj.createGenerator(config).createSchema(config.type);
-  console.timeEnd("* TS TO JSONSCHEMA");
-
-  /* Remove all `#/definitions/` so that we can use the Type name as the $id and have matching $refs with the other Types */
-  let schema = JSON.parse(JSON.stringify(schemaRaw).replace(/#\/definitions\//gm, ""));
-
-  /* Save each Type jsonschema individually, use the Type name as $id */
-  for(let [id, definition] of Object.entries(schema.definitions))
-  {
-    let singleTypeDefinition = {
-      "$id": id,
-      "$schema": "http://json-schema.org/draft-07/schema#",
-      ...definition,
-    };
-    schemas.push(singleTypeDefinition);
-    fs.writeFileSync(path.resolve(destDir+"/"+id+".json"), JSON.stringify(singleTypeDefinition, null, 2));
+    path: srcDir + '/**/*.ts',
+    type: '*'
   }
 
-  return schemas;
+  const schemas = []
+  console.time('* TS TO JSONSCHEMA')
+  const schemaRaw = tsj.createGenerator(config).createSchema(config.type)
+  console.timeEnd('* TS TO JSONSCHEMA')
+
+  /* Remove all `#/definitions/` so that we can use the Type name as the $id and have matching $refs with the other Types */
+  const schema = JSON.parse(JSON.stringify(schemaRaw).replace(/#\/definitions\//gm, ''))
+
+  /* Save each Type jsonschema individually, use the Type name as $id */
+  for (const [id, definition] of Object.entries(schema.definitions)) {
+    const singleTypeDefinition = {
+      $id: id,
+      $schema: 'http://json-schema.org/draft-07/schema#',
+      ...definition
+    }
+    schemas.push(singleTypeDefinition)
+    fs.writeFileSync(path.resolve(destDir + '/' + id + '.json'), JSON.stringify(singleTypeDefinition, null, 2))
+  }
+
+  return schemas
 }
 
-function compileAjvStandalone(schemas, validationFile)
-{
-  console.time("* AJV COMPILE");
-  const ajv = new Ajv({schemas: schemas, code: {source: true, esm: true}});
-  addFormats(ajv);
-  let moduleCode = standaloneCode(ajv);
-  console.timeEnd("* AJV COMPILE");
-  fs.writeFileSync(validationFile, moduleCode);
+function compileAjvStandalone (schemas, validationFile) {
+  console.time('* AJV COMPILE')
+  const ajv = new Ajv({ schemas, code: { source: true, esm: true } })
+  addFormats(ajv)
+  const moduleCode = standaloneCode(ajv)
+  console.timeEnd('* AJV COMPILE')
+  fs.writeFileSync(validationFile, moduleCode)
 }
 
-function esBuildCommonToEsm(validationFile)
-{
-  console.time("* ES BUILD");
+function esBuildCommonToEsm (validationFile) {
+  console.time('* ES BUILD')
   esbuild.buildSync({
     // minify: true,
     bundle: true,
-    target: ["node16"],
+    target: ['node16'],
     keepNames: true,
     platform: 'node',
-    format: "esm",
+    format: 'esm',
     entryPoints: [validationFile],
     outfile: validationFile,
     allowOverwrite: true
-  });
-  console.timeEnd("* ES BUILD");
+  })
+  console.timeEnd('* ES BUILD')
 }
 
-async function generateTypings(validationFile, validationFileFolder)
-{
-  console.time("* TSC DECLARATIONS");
-  await execCommand("tsc","-allowJs --declaration --emitDeclarationOnly \""+validationFile+"\" --outDir \""+validationFileFolder+"\"");
-  console.timeEnd("* TSC DECLARATIONS");
+async function generateTypings (validationFile, validationFileFolder) {
+  console.time('* TSC DECLARATIONS')
+  await execCommand('tsc', '-allowJs --declaration --emitDeclarationOnly "' + validationFile + '" --outDir "' + validationFileFolder + '"')
+  console.timeEnd('* TSC DECLARATIONS')
 }
 
-function moveToSrc(startPath, finalPath) {
-  fs.copyFileSync(startPath, finalPath);
+function moveToSrc (startPath, finalPath) {
+  fs.copyFileSync(startPath, finalPath)
 }
 
-
-async function buildTypes()
-{
-  let paths = {
-    types: path.resolve(__dirname + "/src/cloud-functions"),
-    typesJsonSchema: path.resolve(__dirname + "/build/schemas"),
-    validationPath: path.resolve(__dirname + "/build/"),
-    validationFile: path.resolve(__dirname + "/build/validations.js"),
-    finalValidationFile: path.resolve(__dirname + "/src/validations.js")
-  };
+async function buildTypes () {
+  const paths = {
+    types: path.resolve(__dirname, '/src/cloud-functions'),
+    typesJsonSchema: path.resolve(__dirname, '/build/schemas'),
+    validationPath: path.resolve(__dirname, '/build/'),
+    validationFile: path.resolve(__dirname, '/build/validations.js'),
+    finalValidationFile: path.resolve(__dirname, '/src/validations.js')
+  }
 
   /* Clear the output dir for the AJV validation code, definition and JSON Schema definitions */
-  clearDir(paths.typesJsonSchema);
+  clearDir(paths.typesJsonSchema)
 
   /* Create the JSON Schema files from the TS Types and save them as individual JSON Schema files */
-  let schemas = typeScriptToJsonSchema(paths.types, paths.typesJsonSchema);
+  const schemas = typeScriptToJsonSchema(paths.types, paths.typesJsonSchema)
 
   /* Create the AJV validation code in ESM format from the JSON Schema files */
-  compileAjvStandalone(schemas, paths.validationFile);
+  compileAjvStandalone(schemas, paths.validationFile)
 
   /* Bundle the AJV validation code file in ESM format */
-  esBuildCommonToEsm(paths.validationFile);
+  esBuildCommonToEsm(paths.validationFile)
 
   /* Move to src file to be used by tsc */
-  moveToSrc(paths.validationFile, paths.finalValidationFile);
+  moveToSrc(paths.validationFile, paths.finalValidationFile)
 
   /* Create TypeScript typings for the generated AJV validation code */
-  await generateTypings(paths.validationFile, paths.validationPath);
+  await generateTypings(paths.validationFile, paths.validationPath)
 }
 
 (async () => {
-    await buildTypes()
-})();
+  await buildTypes()
+})()

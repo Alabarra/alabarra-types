@@ -1,32 +1,32 @@
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API to create a new table
  */
- export interface ABReorderCategoryData {
+export interface ABReorderCategoryData {
 
-    /**
+  /**
      * Business id
      */
-     business_id: string;
+  business_id: string
 
-    /**
+  /**
      *  Index of the category that needs to be moved
      */
-    old_index: number;
+  old_index: number
 
-    /**
+  /**
      *  Destination index of the category to move
      */
-    new_index: number;
+  new_index: number
 }
 
 /**
  * Represents the result of a call to the Reorder Category API
  */
-export type ABReorderCategoryDataResponse = ABReorderCategoryDataResponseSuccess | ABResponseError;
+export type ABReorderCategoryDataResponse = ABReorderCategoryDataResponseSuccess | ABResponseError
 
 export interface ABReorderCategoryDataResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {}
+  result: Record<string, unknown>
 }

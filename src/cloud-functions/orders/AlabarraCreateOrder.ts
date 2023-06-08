@@ -1,28 +1,28 @@
-import { ABProductOptionSelections } from '../../types/ABProduct';
-import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
+import { type ABProductOptionSelections } from '../../types/ABProduct'
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 /**
  * Represents a cart line
  */
- export interface ABCreateOrderDataCartLine {
-    /**
+export interface ABCreateOrderDataCartLine {
+  /**
      * Ref to the product
      */
-    product_id: string;
+  product_id: string
 
-    /**
+  /**
      * Options for the given product
      */
-    selected_options: ABProductOptionSelections[];
+  selected_options: ABProductOptionSelections[]
 
-    /**
+  /**
      * number of products
      */
-    quantity: number;
+  quantity: number
 
-    /**
+  /**
      * note for the particular line (e.g. "Cooked medium-rare please", "No ice")
      */
-    note: string | null;
+  note: string | null
 }
 
 /**
@@ -30,54 +30,53 @@ import { ABResponseError, ABResponseSuccessAbstract } from '../ABResponse'
  */
 export interface ABCreateOrderData {
 
-    /**
+  /**
      * Business id
      */
-     business_id: string;
+  business_id: string
 
-    /**
+  /**
      * Ref to the customer
      */
-     customer_id: string;
+  customer_id: string
 
-    /**
+  /**
      * Nickname for the customer
      */
-     customer_nickname?: string;
+  customer_nickname?: string
 
-    /**
+  /**
      * note for the whole order (e.g. "please bring an extra glass. Thanks!")
      */
-    general_note: string | null;
+  general_note: string | null
 
-    /**
+  /**
      * Array with the orders. Should not be empty
      */
-    cart: ABCreateOrderDataCartLine[];
+  cart: ABCreateOrderDataCartLine[]
 
-    /**
+  /**
      * Name of the table where the product should be delivered
      */
-    table_name: string;
+  table_name: string
 
-    /**
+  /**
      * Total amount of tip given for the order
      */
-    tip: number;
+  tip: number
 }
-
 
 /**
  * Represents the result of a call to the Create Order API
  */
-export type ABCreateOrderResponse = ABCreateOrderResponseSuccess | ABResponseError;
+export type ABCreateOrderResponse = ABCreateOrderResponseSuccess | ABResponseError
 
 export interface ABCreateOrderResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the created order
          */
-        order_id: string
-    }
+    order_id: string
+  }
 }

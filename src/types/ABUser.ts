@@ -3,24 +3,24 @@
  */
 export interface ABUser extends ABUserData {
 
-    /**
+  /**
      * id of the user
      */
-    id: string;
+  id: string
 }
 
 export interface ABUserData {
 
-    /**
+  /**
      * Orders from the user
      */
-    orders: ABOrderRef [];
+  orders: ABOrderRef []
 
-    first_name: string | null;
+  first_name: string | null
 
-    last_name: string | null;
+  last_name: string | null
 
-    email: string | null;
+  email: string | null
 }
 
 /**
@@ -28,22 +28,20 @@ export interface ABUserData {
  */
 export enum ABUserRole {
 
-    ADMIN = "ADMIN",
+  ADMIN = 'ADMIN',
 
-    CASHIER = "CASHIER",
+  CASHIER = 'CASHIER',
 
-    WAITER = "WAITER",
+  WAITER = 'WAITER',
 
-    RUNNER = "RUNNER",
+  RUNNER = 'RUNNER',
 
-    COOK = "COOK"
+  COOK = 'COOK'
 }
 
- 
+export interface ABOrderRef {
 
-export type ABOrderRef = {
+  business_id: string
 
-    business_id: string;
-
-    order_id: string;
+  order_id: string
 }

@@ -1,34 +1,34 @@
 
 export enum ABEmployeeRole {
 
-    /**
+  /**
      * Restaurant owner / Root account
      */
-    OWNER = 'OWNER',
-    /**
+  OWNER = 'OWNER',
+  /**
      * Manager account, all admin access
      */
-    MANAGER = 'MANAGER',
+  MANAGER = 'MANAGER',
 
-    /**
+  /**
      * Cashier
      */
-    CHASHIER = 'CHASHIER',
+  CHASHIER = 'CHASHIER',
 
-    /**
+  /**
      * Waiter
      */
-    WAITER = 'WAITER',
+  WAITER = 'WAITER',
 
-    /**
+  /**
      * Runner
      */
-    RUNNER = 'RUNNER',
+  RUNNER = 'RUNNER',
 
-    /**
+  /**
      * Cook
      */
-    COOK = 'COOK'
+  COOK = 'COOK'
 }
 
 /**
@@ -36,27 +36,26 @@ export enum ABEmployeeRole {
  */
 export interface ABEmployee extends ABEmployeeData {
 
-    /**
+  /**
      * id of the employee
      */
-    id: string;
+  id: string
 }
 
 export interface ABEmployeeData {
 
-    /**
+  /**
      * The name of the employee
      */
-    given_name: string;
+  given_name: string
 
-    /**
+  /**
      * The surname of the employee
      */
-    surename: any;
+  surename: any
 
-    /**
+  /**
      * Roles of the employee in different businesses
      */
-    business_roles: Map<string, ABEmployeeRole>;
+  business_roles: Map<string, ABEmployeeRole>
 }
- 

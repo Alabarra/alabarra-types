@@ -1,41 +1,40 @@
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API to create a new category
  */
- export interface ABCreateCategoryData {
+export interface ABCreateCategoryData {
 
-    /**
+  /**
      * Business id
      */
-     business_id: string;
+  business_id: string
 
-    /**
+  /**
      * Category name
      */
-    category_name: string;
+  category_name: string
 
-    /**
+  /**
     * Category description
     */
-    category_description: string;
+  category_description: string
 }
-
 
 /**
  * Represents the result of a call to the Create Category API
  */
-export type ABCreateCategoryResponse = ABCreateCategoryResponseSuccess | ABResponseError;
+export type ABCreateCategoryResponse = ABCreateCategoryResponseSuccess | ABResponseError
 
 /**
  * Represents a sucessfull cll to create category
  */
 export interface ABCreateCategoryResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the created category, which is in turn its visible name
          */
-        category_id: string
-    }
+    category_id: string
+  }
 }

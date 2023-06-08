@@ -1,29 +1,29 @@
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API for setting order as ready for delivery
  */
- export interface ABSetOrderReadyForDeliveryData {
+export interface ABSetOrderReadyForDeliveryData {
 
-    /**
+  /**
      * Business id
      */
-     business_id: string;
+  business_id: string
 
-    /**
+  /**
      * Id to the order
      */
-    order_id: string;
+  order_id: string
 }
 
-export type ABSetOrderReadyForDeliveryResponse = ABSetOrderReadyForDeliveryResponseSuccess | ABResponseError;
+export type ABSetOrderReadyForDeliveryResponse = ABSetOrderReadyForDeliveryResponseSuccess | ABResponseError
 
 export interface ABSetOrderReadyForDeliveryResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the created order
          */
-        order_id: string
-    }
+    order_id: string
+  }
 }

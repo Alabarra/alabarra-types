@@ -1,33 +1,32 @@
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API to create a new table
  */
- export interface ABConfirmDigitalPaymentData {
+export interface ABConfirmDigitalPaymentData {
 
-    /**
+  /**
      * Business id
      */
-     business_id: string;
+  business_id: string
 
-    /**
+  /**
      * Order id
      */
-    order_id: string;
+  order_id: string
 }
 
 /**
  * Represents the result of a call to the Create Order API
  */
- export type ABConfirmDigitalPaymentResponse = ABConfirmDigitalPaymentResponseSuccess | ABResponseError;
-
+export type ABConfirmDigitalPaymentResponse = ABConfirmDigitalPaymentResponseSuccess | ABResponseError
 
 export interface ABConfirmDigitalPaymentResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the order
          */
-        order_id: string
-    }
+    order_id: string
+  }
 }

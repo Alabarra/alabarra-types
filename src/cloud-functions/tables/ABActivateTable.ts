@@ -1,43 +1,42 @@
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API to activate or deactivate a table
  */
- export interface ABActivateTableData {
+export interface ABActivateTableData {
 
-    /**
+  /**
      * Business id
      */
-    business_id: string;
+  business_id: string
 
-    /**
+  /**
      * Table id
      */
-    table_id: string;
+  table_id: string
 
-    /**
+  /**
      * New activation status
      */
-    active: boolean;
+  active: boolean
 }
 
 /**
  * Represents the result of a call to the Activate table API
  */
- export type ABActivateTableResponse = ABActivateTableResponseSuccess | ABResponseError;
-
+export type ABActivateTableResponse = ABActivateTableResponseSuccess | ABResponseError
 
 export interface ABActivateTableResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the table
          */
-        table_id: string;
+    table_id: string
 
-        /**
+    /**
          * Status of the table
          */
-        active: boolean;
-    }
+    active: boolean
+  }
 }

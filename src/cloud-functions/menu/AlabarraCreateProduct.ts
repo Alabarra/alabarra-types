@@ -1,70 +1,70 @@
-import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
-import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
+import { type ABProductOption, type ABProductStatus } from '../../types/ABProduct'
+import { type ABResponseError, type ABResponseSuccessAbstract } from '../ABResponse'
 
 /**
  * API to create a new table
  */
- export interface ABCreateProductData {
+export interface ABCreateProductData {
 
-    /**
+  /**
      * Business id
      */
-    business_id: string;
+  business_id: string
 
-    /**
+  /**
      *  Visible name of the product
      */
-    title: string;
+  title: string
 
-    /**
+  /**
      *  Reference to the category where the product lives
      */
-    category_id: string;
+  category_id: string
 
-    // This data will be generated server-side
-    //created_at: Date;
+  // This data will be generated server-side
+  // created_at: Date;
 
-    /**
+  /**
      *  Description of the product
      */
-    description: string;
+  description: string
 
-    /**
+  /**
      *  Path to the image in the default bucket
      */
-    image_temp_path: string;
+  image_temp_path: string
 
-    //will be generated server-side
-    //last_updated_at: Date | null;
+  // will be generated server-side
+  // last_updated_at: Date | null;
 
-    /**
+  /**
      *  Options of the product, if any
      */
-    options: ABProductOption[];
+  options: ABProductOption[]
 
-    /**
+  /**
      *  Unit price
      */
-    price: number;
+  price: number
 
-    /**
+  /**
      *  Status of the product
      */
-    status: ABProductStatus;
+  status: ABProductStatus
 
 }
 
 /**
  * Represents the result of a call to the Create Order API
  */
-export type ABCreateProductResponse = ABCreateProductResponseSuccess | ABResponseError;
+export type ABCreateProductResponse = ABCreateProductResponseSuccess | ABResponseError
 
 export interface ABCreateProductResponseSuccess extends ABResponseSuccessAbstract {
 
-    result: {
-        /**
+  result: {
+    /**
          * The ID of the created product, which is in turn its visible name
          */
-        product_id: string
-    }
+    product_id: string
+  }
 }

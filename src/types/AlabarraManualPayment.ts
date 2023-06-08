@@ -1,58 +1,56 @@
-import { DocumentReference } from "firebase/firestore";
-
 /**
  * Represents a product that can be ordered
  */
- export interface ABManualPayment extends ABManualPaymentData {
+export interface ABManualPayment extends ABManualPaymentData {
 
-    /**
+  /**
     * id of the product
     */
-    id: string;
+  id: string
 
-    /**
+  /**
      * path of the product
      */
-    path: string;
+  path: string
 
-    /**
+  /**
      * Date of product creation in the server
      */
-    created_at: Date;
+  created_at: Date
 
-    /**
+  /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     last_updated_at: Date | null;
+  last_updated_at: Date | null
 }
 
 /**
  * Represents a manual payment
  */
- export interface ABManualPaymentData {
+export interface ABManualPaymentData {
 
-    /**
+  /**
      * Date of product creation in the server
      */
-    created_at?: any;
+  created_at?: any
 
-    /**
+  /**
      * Ref to the order that was confirmed
      */
-    order_id: string;
+  order_id: string
 
-    /**
+  /**
      * Ref to the waiter that confirmed the payment
      */
-    confirmed_by_waiter_id: string;
+  confirmed_by_waiter_id: string
 
-    /**
+  /**
      * General notes about the payment (e.g. Strip payment id 123), otherwise null
      */
-    payment_notes: string | null;
+  payment_notes: string | null
 
-    /**
+  /**
      * Last time the product was modified. Null in case the product was never modified
      */
-     last_updated_at: Date | null;
+  last_updated_at: Date | null
 }
