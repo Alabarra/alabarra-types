@@ -1,0 +1,42 @@
+name: Create Package Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build script
+        run: npm run build
+
+      - name: Patch version
+        run: |
+          git config user.email ${{ github.actor }}@alabarra.com
+          git config user.name ${{ github.actor }}
+          npm version patch
+          git push
+
+      - name: Publish package
+        run: npm publish
+        env:
+          NPM_TOKEN: ${{ secrets.GH_TOKEN }}
