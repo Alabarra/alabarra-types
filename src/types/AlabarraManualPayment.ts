@@ -9,12 +9,6 @@ import { DocumentReference } from "firebase/firestore";
     * id of the product
     */
     id: string;
-
-    /**
-     * path of the product
-     */
-    path: string;
-
     /**
      * Date of product creation in the server
      */

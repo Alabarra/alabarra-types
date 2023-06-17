@@ -18,8 +18,6 @@ export const CategoryConverter: FirestoreDataConverter<ABCategory> = {
 	fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): ABCategory {
 		const data = snapshot.data(options);
 		data.id = snapshot.id;
-        data.ref = snapshot.ref;
-		data.path = snapshot.ref.path;
 		if (data.created_at != undefined && data.created_at != null) {
 			data.created_at = (data.created_at as Timestamp).toDate()
 		}

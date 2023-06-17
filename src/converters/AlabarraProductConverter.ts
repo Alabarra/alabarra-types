@@ -20,7 +20,6 @@ export const ProductConverter: FirestoreDataConverter<ABProduct> = {
 
 		const newProduct: ABProduct = {
 			id: snapshot.id,
-			path: snapshot.ref.path,
 			...data
 		}
 

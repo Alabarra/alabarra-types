@@ -92,11 +92,6 @@ export enum ABOrderStatus {
     id: string;
 
     /**
-     * path of the product
-     */
-    path: string;
-
-    /**
      * Date of product creation in the server
      */
     created_at: Date;
