@@ -25,7 +25,6 @@ export * from "./cloud-functions/ABResponse";
     CLOUD FUNCTIONS INTERFACES
     --------------------------
 */
-
 export * from "./cloud-functions/ABStripeMetadata";
 
 export * from "./cloud-functions/businessConfig/ABUpdateBusinessConfig";
