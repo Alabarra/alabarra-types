@@ -1,6 +1,6 @@
 {
   "name": "@Alabarra/alabarra-types",
-  "version": "1.1.75",
+  "version": "1.1.76",
   "description": "",
   "main": "./out/index.js",
   "types": "./out/index.d.ts",
