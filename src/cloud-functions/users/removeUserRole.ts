@@ -1,4 +1,3 @@
-import { ABUserRole } from "../../types/ABUser";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
