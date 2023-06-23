@@ -51,6 +51,7 @@ export * from "./cloud-functions/tables/ABDeleteTable";
 
 export * from "./cloud-functions/users/createUser";
 export * from "./cloud-functions/users/editUserRole";
+export * from "./cloud-functions/users/removeUserRole";
 
 /* 
     --------------------------
