@@ -56,9 +56,9 @@ export interface ABCreateOrderData {
     cart: ABCreateOrderDataCartLine[];
 
     /**
-     * Name of the table where the product should be delivered
+     * Table id
      */
-    table_name: string;
+    table_id: string;
 
     /**
      * Total amount of tip given for the order
