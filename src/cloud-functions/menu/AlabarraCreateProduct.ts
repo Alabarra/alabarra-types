@@ -1,5 +1,4 @@
-import { ABProductTag } from "@dvalenzuela-com/alabarra-types";
-import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
+import { ABProductOption, ABProductStatus, ABProductTag } from "../../types/ABProduct";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
 /**
