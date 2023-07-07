@@ -1,3 +1,4 @@
+import { ABProductTag } from "@dvalenzuela-com/alabarra-types";
 import { ABProductOption, ABProductStatus } from "../../types/ABProduct";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
@@ -41,6 +42,12 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      *  Options of the product, if any
      */
     options: ABProductOption[];
+
+    /**
+     * Tags of the product, if any
+     */
+
+    tags: ABProductTag[];
 
     /**
      *  Unit price

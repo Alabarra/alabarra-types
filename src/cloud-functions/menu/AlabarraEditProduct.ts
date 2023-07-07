@@ -1,8 +1,10 @@
-import { ABProductOption, ABProductOptionMultipleSelection, ABProductOptionSingleSelection, ABProductStatus } from "../../types/ABProduct";
+import { ABProductOption, ABProductStatus, ABProductTag } from "../../types/ABProduct";
 import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
 
+// TODO: Think about using partial on ABProductData or similar with Omit on things that wont change.
+
 /**
- * API to create a new table
+ * API to edit a product
  */
  export interface ABEditProductData {
 
@@ -47,6 +49,10 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      */
     options?: ABProductOption[];
  
+    /**
+     * Tags of the product, if any
+     */
+    tags?: ABProductTag[];
     /**
      *  Unit price
      */
