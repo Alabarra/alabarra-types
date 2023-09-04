@@ -116,6 +116,11 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
      * Array of the possible values this option can take
      */
     possible_values: ABProductOptionsPossibleValue[];
+
+    /**
+     * Whether this option is active or not
+     */
+    active: boolean;
 }
 
 
