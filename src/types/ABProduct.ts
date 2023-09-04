@@ -166,9 +166,9 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
     price: number;
 
     /**
-     * Ref to the category where the product resides, null otherwise. n:1 relationship
+     * Array with the categories the product belongs to. Can be emtpy.
      */
-    category: string | null;
+    categories: string[];
 
     /**
      * Optional food tags

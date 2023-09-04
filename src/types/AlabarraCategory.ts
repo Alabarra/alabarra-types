@@ -38,7 +38,7 @@ import { DocumentReference } from "firebase/firestore";
     created_at?: any;
 
     /**
-     * Contained products
+     * Products inside the category in the relevant order
      */
     products: string[];
 
