@@ -19,7 +19,7 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
     /**
      *  Reference to the category where the product lives
      */
-    category_id: string;
+    category_ids: string[];
 
     // This data will be generated server-side
     //created_at: Date;
@@ -52,6 +52,11 @@ import { ABResponseError, ABResponseSuccessAbstract } from "../ABResponse";
      *  Unit price
      */
     price: number;
+
+    /**
+     * Discounted price
+     */
+    discounted_price: number | null;
 
     /**
      *  Status of the product

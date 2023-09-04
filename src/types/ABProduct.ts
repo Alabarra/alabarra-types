@@ -171,6 +171,11 @@ export interface ABProductOptionSingleSelection extends ABProductOptionAbstract 
     price: number;
 
     /**
+     * Discounted price
+     */
+    discounted_price: number | null;
+
+    /**
      * Array with the categories the product belongs to. Can be emtpy.
      */
     categories: string[];
