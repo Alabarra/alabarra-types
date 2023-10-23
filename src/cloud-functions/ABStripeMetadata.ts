@@ -19,7 +19,7 @@ export type ABStripeMetadata = {
     /**
      * Bill total without tips or discounts
      */
-    bill_total: number;
+    bill_total: number | string;
 
     /**
      * total tip
