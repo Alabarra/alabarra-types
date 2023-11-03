@@ -15,7 +15,7 @@ export type ABFlowUnsignedCreatePaymentData = {
     }
   };
 
-export type ABFlowSignedCreatePaymentData = ABFlowUnsignedCreatePaymentData & { s: string };
+export type ABFlowSignedCreatePaymentData = Omit<ABFlowUnsignedCreatePaymentData, "optional"> & {optional: string, s: string };
 
 export enum ABFlowPaymentMethod {
   "ALL" = 9,
