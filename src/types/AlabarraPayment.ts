@@ -32,7 +32,13 @@ export enum ABPaymentMethod {
     /**
      * Paid digitally via MercadoPago
      */
-    CL_MERCADOPAGO = 'CL_MERCADOPAGO'
+    CL_MERCADOPAGO = 'CL_MERCADOPAGO',
+
+    /**
+     * Paid digitally via flow
+     */
+
+    CL_FLOW = 'CL_FLOW',
 }
 
 
@@ -41,6 +47,15 @@ export interface ABPaymentDataStripe extends ABPaymentData {
     payment_method: ABPaymentMethod.EU_DIGITAL_STRIPE;
 
     stripe_payment_id: string;
+}
+
+export interface ABPaymentDataFlow extends ABPaymentData {
+
+    payment_method: ABPaymentMethod.CL_FLOW;
+
+    flow_order_id: string;
+
+    flow_token: string;
 }
 
 export interface ABPaymentDataPresentialCard extends ABPaymentData {
