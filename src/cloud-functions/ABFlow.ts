@@ -8,6 +8,11 @@ export type ABFlowUnsignedCreatePaymentData = {
     urlConfirmation: string;
     urlReturn: string;
     apiKey: string;
+    optional: {
+      business_id: string;
+      order_id: string;
+      payment_id: string;
+    }
   };
 
 export type ABFlowSignedCreatePaymentData = ABFlowUnsignedCreatePaymentData & { s: string };
@@ -39,9 +44,10 @@ export type ABFlowGetStatusResponse = {
   amount: number;
   payer: string;
   optional?: {
-    RUT?: string;
-    ID?: string;
-  };
+    business_id: string;
+    order_id: string;
+    payment_id: string;
+  }
   pending_info: {
     media: string;
     date: string;
