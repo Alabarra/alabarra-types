@@ -1,16 +1,17 @@
-export type ABFlowCreatePaymentData = {
+export type ABFlowUnsignedCreatePaymentData = {
     subject: string;
     currency: "CLP";
-    amount: number;
+    amount: string;
     email: string;
     paymentMethod: ABFlowPaymentMethod;
     commerceOrder: string;
     urlConfirmation: string;
     urlReturn: string;
-    s: string;
     apiKey: string;
   };
-  
+
+export type ABFlowSignedCreatePaymentData = ABFlowUnsignedCreatePaymentData & { s: string };
+
 export enum ABFlowPaymentMethod {
   "ALL" = 9,
   "WEBPAY_PLUS" = 1,
