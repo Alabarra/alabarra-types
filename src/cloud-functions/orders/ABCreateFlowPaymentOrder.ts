@@ -4,7 +4,13 @@ import { ABCreateOrderData } from './AlabarraCreateOrder';
 /**
  * API for creating a new order
  */
-export interface ABCreateFlowPaymentOrderData extends ABCreateOrderData {}
+export interface ABCreateFlowPaymentOrderData extends ABCreateOrderData {
+
+    /**
+     * Host (ej: localhost or client.dev.alabarra.com) to use in the redirect URI
+     */
+    redirect_uri_host?: string;
+}
 
 /**
  * Represents the result of a call to the Create Order API
