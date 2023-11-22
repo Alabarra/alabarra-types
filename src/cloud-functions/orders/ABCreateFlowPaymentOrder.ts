@@ -9,7 +9,7 @@ export interface ABCreateFlowPaymentOrderData extends ABCreateOrderData {
     /**
      * Host (ej: localhost or client.dev.alabarra.com) to use in the redirect URI
      */
-    redirect_uri_host?: string;
+    redirect_uri_host: string;
 }
 
 /**
